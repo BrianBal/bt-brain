@@ -1,0 +1,27 @@
+{
+    "name": "core",
+    "private": true,
+    "version": "0.0.0",
+    "type": "commonjs",
+    "main": "dist/main.js",
+    "types": "dist/main.d.ts",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "test": "vitest run"
+    },
+    "devDependencies": {
+        "@types/node": "^20.12.12",
+        "typescript": "^5.2.2",
+        "vite": "^5.2.0",
+        "vite-plugin-dts": "^3.9.1",
+        "vitest": "^1.6.0"
+    },
+    "dependencies": {
+        "@google-cloud/vertexai": "^1.1.0",
+        "sqlite": "^5.1.1",
+        "sqlite3": "^5.1.7",
+        "yaml": "^2.4.2"
+    }
+}

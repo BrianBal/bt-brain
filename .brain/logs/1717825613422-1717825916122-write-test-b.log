@@ -1,0 +1,89 @@
+```
+import { describe, it, beforeEach, afterEach, vi } from 'vitest';
+import { Session } from './Session';
+
+vi.mock('./dependencies/axios', () => ({
+  create: () => ({
+    get: vi.fn(),
+    post: vi.fn(),
+    put: vi.fn(),
+    delete: vi.fn(),
+  }),
+}));
+
+describe('Session', () => {
+  let session: Session;
+
+  beforeEach(() => {
+    session = new Session();
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('should create a new instance of Session', () => {
+    expect(session).toBeInstanceOf(Session);
+  });
+
+  it('should have an authenticated property initialized to false', () => {
+    expect(session.authenticated).toBeFalsy();
+  });
+
+  describe('login method', () => {
+    it('should call the post method on the axios instance with the correct endpoint and credentials', async () => {
+      const username = 'username';
+      const password = 'password';
+
+      await session.login(username, password);
+
+      expect(vi.mocked('./dependencies/axios').create().post).toHaveBeenCalledTimes(1);
+      expect(vi.mocked('./dependencies/axios').create().post).toHaveBeenCalledWith('/auth/login', { username, password });
+    });
+
+    it('should throw an error if the post method fails', async () => {
+      vi.mocked('./dependencies/axios').create().post.mockRejectedValueOnce(new Error('Failed to login'));
+
+      await expect(session.login('username', 'password')).rejects.toThrowError('Failed to login');
+    });
+  });
+
+  describe('logout method', () => {
+    it('should call the post method on the axios instance with the correct endpoint and credentials', async () => {
+      await session.logout();
+
+      expect(vi.mocked('./dependencies/axios').create().post).toHaveBeenCalledTimes(1);
+      expect(vi.mocked('./dependencies/axios').create().post).toHaveBeenCalledWith('/auth/logout');
+    });
+
+    it('should throw an error if the post method fails', async () => {
+      vi.mocked('./dependencies/axios').create().post.mockRejectedValueOnce(new Error('Failed to logout'));
+
+      await expect(session.logout()).rejects.toThrowError('Failed to logout');
+    });
+  });
+
+  describe('checkAuthentication method', () => {
+    it('should call the get method on the axios instance with the correct endpoint', async () => {
+      await session.checkAuthentication();
+
+      expect(vi.mocked('./dependencies/axios').create().get).toHaveBeenCalledTimes(1);
+      expect(vi.mocked('./dependencies/axios').create().get).toHaveBeenCalledWith('/auth/check');
+    });
+
+    it('should set authenticated to true if the get method succeeds', async () => {
+      vi.mocked('./dependencies/axios').create().get.mockResolvedValueOnce({ data: { authenticated: true } });
+
+      await session.checkAuthentication();
+
+      expect(session.authenticated).toBeTruthy();
+    });
+
+    it('should throw an error if the get method fails', async () => {
+      vi.mocked('./dependencies/axios').create().get.mockRejectedValueOnce(new Error('Failed to check authentication'));
+
+      await expect(session.checkAuthentication()).rejects.toThrowError('Failed to check authentication');
+    });
+  });
+});
+```

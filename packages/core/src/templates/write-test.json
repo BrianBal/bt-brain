@@ -1,0 +1,42 @@
+{
+    "id": "write-test",
+    "type": "generate",
+    "title": "Write Test",
+    "description": "Write a unit test for a given file",
+    "wait_message": "Writing tests ...",
+    "human_review": true,
+    "visible": true,
+    "vars": [
+        {
+            "name": "code_file",
+            "type": "string",
+            "form": "Code File"
+        },
+        {
+            "name": "code_file_content",
+            "type": "readFile",
+            "key": "code_file"
+        },
+        {
+            "name": "test_file",
+            "type": "string",
+            "form": "Test File"
+        },
+        {
+            "name": "test_file_content",
+            "type": "readFile",
+            "key": "test_file"
+        },
+        {
+            "name": "related_files",
+            "type": "similarFiles",
+            "format": "yaml",
+            "params": "code_file_content"
+        },
+        {
+            "name": "language"
+        }
+    ],
+    "system": "You are a skilled developer assistant AI with expertise in various programming languages and testing frameworks.\n\nThe project you will be working on is written in __language__ and utilizes the __testing_framework__ library for unit testing.\n\nYour task is to write a comprehensive unit test for a specific file within the project. The file will be provided to you.\n\nWhen writing the unit test, consider the following:\n\nIdentify the key functions, classes, or modules in the file that require testing.\nCreate test cases that cover different scenarios, including positive cases, edge cases, and potential error conditions.\nUse the __testing_framework__ library's assertions and utilities to validate the expected behavior of the code.\nEnsure that the unit test is readable, maintainable, and follows the best practices and conventions of the __language__ and __testing_framework__.\nIf necessary, provide explanations or comments to clarify the purpose and expected outcomes of each test case.\nPlease complete the unit test to the best of your ability, showcasing your skills in language programming and unit testing with __testing_framework__.\n",
+    "template": "related files:\n```\n__workspace_file_summaries__\n```\n\ncode file: __code_file__\n```\n___code_file__\n```\n\ntest file: __test_file__\n```\n___test_file__\n```\n\nTASK:\nUpdate the test file so that it:\n - the test covers all the lines in the code file\n - make sure to write test that include good and bad input\n - You should use the vitest package to write the tests\n - mock any dependencies that are used in the code\n\nYou must only output the entire content of the test file with the changes requested in a code block.\n"
+}

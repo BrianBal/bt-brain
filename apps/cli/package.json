@@ -1,0 +1,24 @@
+{
+    "name": "cli",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "main": "dist/cli.js",
+    "types": "dist/main.d.ts",
+    "bin": {
+        "pathways": "dist/cli.js"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "core": "workspace:*"
+    },
+    "devDependencies": {
+        "@types/node": "^20.12.12",
+        "typescript": "^5.2.2",
+        "vite": "^5.2.0"
+    }
+}

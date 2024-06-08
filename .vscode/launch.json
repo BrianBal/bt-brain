@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Open Trace Lambdas",
+            "type": "extensionHost",
+            "request": "launch",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}/apps/brain-vscode",
+                "/Users/bal/trace/aws-lambda/lambda/traceid"
+            ],
+            "outFiles": ["${workspaceFolder}/apps/brain-vscode/src/**/*.js"]
+        },
+        {
+            "name": "BRAIN Run",
+            "type": "extensionHost",
+            "request": "launch",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}/apps/brain-vscode",
+                "/Users/bal/labs/bt-cast"
+            ],
+            "outFiles": ["${workspaceFolder}/apps/brain-vscode/src/**/*.js"]
+        },
+        {
+            "name": "VSCodeExt Run",
+            "type": "extensionHost",
+            "request": "launch",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}/apps/btvscode",
+                "/Users/bal/labs/bt-cast"
+            ],
+            "outFiles": ["${workspaceFolder}/apps/btvscode/dist/**/*.js"]
+        }
+    ]
+}

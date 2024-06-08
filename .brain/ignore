@@ -1,0 +1,7 @@
+.brain
+node_modules
+coverage
+.vscode
+.git
+build
+dist

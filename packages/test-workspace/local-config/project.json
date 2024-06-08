@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "name": "My Project",
+  "language": "TypeScript",
+  "testFramework": "vitest",
+  "cmdTest": "npm test",
+  "cmdLint": "npm run lint",
+  "cmdFormat": "npm run lint"
+}

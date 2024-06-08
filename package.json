@@ -1,0 +1,31 @@
+{
+    "name": "bt-pathways",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "core": "pnpm --filter core",
+        "cli": "pnpm --filter cli",
+        "ext": "pnpm --filter brain-vscode",
+        "ext:package": "pnpm ext package",
+        "build": "pnpm core build && pnpm vscode build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "engines": {
+        "node": ">=20.5.1"
+    },
+    "type": "module",
+    "devDependencies": {
+        "@eslint/compat": "^1.0.1",
+        "@eslint/js": "^9.3.0",
+        "eslint": "9.x",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-react": "^7.34.1",
+        "globals": "^15.3.0",
+        "prettier": "^3.2.5",
+        "typescript-eslint": "^7.10.0"
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "name": "btvscode",
+    "displayName": "Bal Tools VSCode Extension",
+    "description": "Tools in an extension",
+    "version": "0.0.3",
+    "engines": {
+        "vscode": "^1.89.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onWebviewPanel:taskView"
+    ],
+    "type": "commonjs",
+    "main": "./dist/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "btvscode.helloWorld",
+                "title": "Hello World"
+            },
+            {
+                "command": "btvscode.run",
+                "title": "Bal Tools"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "pnpm run package",
+        "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
+        "build2": "tsc && vite build",
+        "build": "esbuild ./src/extension.ts --bundle --outdir=dist --external:vscode --format=cjs --platform=node",
+        "watch": "npm-run-all -p watch:*",
+        "watch:esbuild": "node esbuild.js --watch",
+        "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+        "package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
+        "compile-tests": "tsc -p . --outDir out",
+        "watch-tests": "tsc -p . -w --outDir out",
+        "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+        "check-types": "tsc --noEmit",
+        "lint": "echo 'all good'",
+        "test": "vscode-test"
+    },
+    "dependencies": {
+        "@vscode/sqlite3": "5.1.6-vscode",
+        "core": "workspace:*",
+        "node-fetch": "^3.3.2",
+        "sqlite": "^5.1.1",
+        "sqlite3": "^5.1.7",
+        "vite": "^5.2.0",
+        "vite-plugin-dts": "^3.9.1",
+        "vscode": "^1.1.37"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.6",
+        "@types/node": "18.x",
+        "@types/vscode": "^1.89.0",
+        "@typescript-eslint/eslint-plugin": "^7.7.1",
+        "@typescript-eslint/parser": "^7.7.1",
+        "@vscode/test-cli": "^0.0.9",
+        "@vscode/test-electron": "^2.3.9",
+        "esbuild": "^0.20.2",
+        "eslint": "^8.57.0",
+        "npm-run-all": "^4.1.5",
+        "typescript": "^5.4.5"
+    }
+}

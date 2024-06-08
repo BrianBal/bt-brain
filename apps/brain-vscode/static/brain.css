@@ -1,0 +1,189 @@
+/** Grid **/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.col {
+    box-sizing: border-box;
+    gap: 16px;
+}
+
+.f1 {
+    flex: 0 0 1;
+    flex-basis: calc(8.33% - 32px);
+}
+.f2 {
+    flex: 0 0 2;
+    flex-basis: calc(16.67% - 32px);
+}
+.f3 {
+    flex: 0 0 3;
+    flex-basis: calc(25% - 32px);
+}
+.f4 {
+    flex: 0 0 4;
+    flex-basis: calc(33% - 32px);
+}
+.f5 {
+    flex: 0 0 5;
+    flex-basis: calc(41.67% - 32px);
+}
+.f6 {
+    flex: 0 0 6;
+    flex-basis: calc(50% - 32px);
+}
+.f7 {
+    flex: 0 0 7;
+    flex-basis: calc(58.33% - 32px);
+}
+.f8 {
+    flex: 0 0 8;
+    flex-basis: calc(66.67 - 32px);
+}
+.f9 {
+    flex: 0 0 9;
+    flex-basis: calc(75% - 32px);
+}
+.f10 {
+    flex: 0 0 10;
+    flex-basis: calc(83.33 - 32px);
+}
+.f11 {
+    flex: 0 0 11;
+    flex-basis: calc(91.67% - 32px);
+}
+.f12 {
+    flex: 0 0 12;
+    width: calc(100%- 32px);
+}
+/** End Grid **/
+
+/** Forms **/
+
+/* General form styles */
+.formish {
+    color: var(--vscode-editor-foreground);
+    background-color: var(--vscode-editor-background);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styles */
+.formish label {
+    font-weight: 600;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Input styles */
+.formish input,
+.formish select,
+.formish textarea {
+    appearance: none;
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid var(--vscode-editor-widget-border);
+    border-radius: 3px;
+    background-color: var(--vscode-input-background);
+    color: var(--vscode-input-foreground);
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.formish input:focus,
+.formish select:focus,
+.formish textarea:focus {
+    outline: none;
+    outline-offset: 0;
+    border: 2px solid var(--vscode-inputOption-activeBorder);
+}
+
+/* Textarea styles */
+.formish textarea.input {
+    resize: vertical;
+    width: 100%;
+    min-height: 100px;
+    line-height: 1.7;
+}
+
+/* File input styles */
+.formish input[type="file"] {
+    padding: 6px 12px;
+    background-color: var(--vscode-editor-background);
+    color: var(--vscode-editor-foreground);
+    border: 1px solid var(--vscode-editor-widget-border);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.formish input[type="file"]::-webkit-file-upload-button {
+    background-color: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.formish input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: var(--vscode-button-hoverBackground);
+}
+
+/** End Forms **/
+
+/** Buttons **/
+
+a.btn,
+button {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+a.btn.positive,
+button.positive {
+    background-color: var(--vscode-terminal-ansiGreen);
+    color: var(--vscode-button-foreground);
+}
+
+a.btn.negative,
+button.negative {
+    background-color: var(--vscode-terminal-ansiBrightRed);
+    color: var(--vscode-button-foreground);
+}
+
+/** End Buttons **/
+
+/** Template Button **/
+.template-button {
+    border: 2px solid var(--vscode-editorInfo-foreground);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.2s ease-in-out;
+}
+.template-button:hover {
+    background-color: var(--vscode-editorInfo-foreground);
+}
+.template-button:active {
+    border: 2px solid var(--vscode-editorLink-activeForeground);
+    background-color: var(--vscode-editorLink-activeForeground);
+}
+.template-button h3 {
+    margin-bottom: 0.2em;
+}
+.template-button p {
+    margin-top: 0em;
+}
+/** End Template Button **/
