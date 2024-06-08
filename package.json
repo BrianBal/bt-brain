@@ -9,7 +9,7 @@
         "cli": "pnpm --filter cli",
         "ext": "pnpm --filter brain-vscode",
         "ext:package": "pnpm ext package",
-        "build": "pnpm core build && pnpm vscode build"
+        "build": "pnpm core build && pnpm ext build"
     },
     "keywords": [],
     "author": "",

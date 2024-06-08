@@ -12736,9 +12736,9 @@ var require_encoding = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/node-fetch@2.7.0/node_modules/node-fetch/lib/index.js
+// ../../node_modules/.pnpm/node-fetch@2.7.0_encoding@0.1.13/node_modules/node-fetch/lib/index.js
 var require_lib3 = __commonJS({
-  "../../node_modules/.pnpm/node-fetch@2.7.0/node_modules/node-fetch/lib/index.js"(exports2, module2) {
+  "../../node_modules/.pnpm/node-fetch@2.7.0_encoding@0.1.13/node_modules/node-fetch/lib/index.js"(exports2, module2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     function _interopDefault(ex) {
@@ -13996,9 +13996,9 @@ var require_is_stream = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/package.json
+// ../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/package.json
 var require_package = __commonJS({
-  "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/package.json"(exports2, module2) {
+  "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/package.json"(exports2, module2) {
     module2.exports = {
       name: "gaxios",
       version: "6.6.0",
@@ -14097,9 +14097,9 @@ var require_package = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/util.js
+// ../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/util.js
 var require_util = __commonJS({
-  "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/util.js"(exports2) {
+  "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/util.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.pkg = void 0;
@@ -14107,9 +14107,9 @@ var require_util = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/common.js
+// ../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/common.js
 var require_common = __commonJS({
-  "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/common.js"(exports2) {
+  "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/common.js"(exports2) {
     "use strict";
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
       return mod && mod.__esModule ? mod : { "default": mod };
@@ -14246,9 +14246,9 @@ var require_common = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/retry.js
+// ../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/retry.js
 var require_retry = __commonJS({
-  "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/retry.js"(exports2) {
+  "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/retry.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.getRetryConfig = void 0;
@@ -14697,9 +14697,9 @@ var init_esm_node = __esm({
   }
 });
 
-// ../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/interceptor.js
+// ../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/interceptor.js
 var require_interceptor = __commonJS({
-  "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/interceptor.js"(exports2) {
+  "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/interceptor.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.GaxiosInterceptorManager = void 0;
@@ -15951,9 +15951,9 @@ var require_dist3 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/gaxios.js
+// ../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/gaxios.js
 var require_gaxios = __commonJS({
-  "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/gaxios.js"(exports2) {
+  "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/gaxios.js"(exports2) {
     "use strict";
     var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -16386,9 +16386,9 @@ Content-Type: ${partContentType}\r
   }
 });
 
-// ../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/index.js
+// ../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/index.js
 var require_src2 = __commonJS({
-  "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/index.js"(exports2) {
+  "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/index.js"(exports2) {
     "use strict";
     var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -18320,9 +18320,9 @@ var require_json_bigint = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/gcp-metadata@6.1.0/node_modules/gcp-metadata/build/src/gcp-residency.js
+// ../../node_modules/.pnpm/gcp-metadata@6.1.0_encoding@0.1.13/node_modules/gcp-metadata/build/src/gcp-residency.js
 var require_gcp_residency = __commonJS({
-  "../../node_modules/.pnpm/gcp-metadata@6.1.0/node_modules/gcp-metadata/build/src/gcp-residency.js"(exports2) {
+  "../../node_modules/.pnpm/gcp-metadata@6.1.0_encoding@0.1.13/node_modules/gcp-metadata/build/src/gcp-residency.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.detectGCPResidency = exports2.isGoogleComputeEngine = exports2.isGoogleComputeEngineMACAddress = exports2.isGoogleComputeEngineLinux = exports2.isGoogleCloudServerless = exports2.GCE_LINUX_BIOS_PATHS = void 0;
@@ -18375,9 +18375,9 @@ var require_gcp_residency = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/gcp-metadata@6.1.0/node_modules/gcp-metadata/build/src/index.js
+// ../../node_modules/.pnpm/gcp-metadata@6.1.0_encoding@0.1.13/node_modules/gcp-metadata/build/src/index.js
 var require_src3 = __commonJS({
-  "../../node_modules/.pnpm/gcp-metadata@6.1.0/node_modules/gcp-metadata/build/src/index.js"(exports2) {
+  "../../node_modules/.pnpm/gcp-metadata@6.1.0_encoding@0.1.13/node_modules/gcp-metadata/build/src/index.js"(exports2) {
     "use strict";
     var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -18738,9 +18738,9 @@ var require_base64_js = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/crypto/browser/crypto.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/crypto/browser/crypto.js
 var require_crypto = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/crypto/browser/crypto.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/crypto/browser/crypto.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.BrowserCrypto = void 0;
@@ -18834,9 +18834,9 @@ var require_crypto = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/crypto/node/crypto.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/crypto/node/crypto.js
 var require_crypto2 = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/crypto/node/crypto.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/crypto/node/crypto.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.NodeCrypto = void 0;
@@ -18898,9 +18898,9 @@ var require_crypto2 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/crypto/crypto.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/crypto/crypto.js
 var require_crypto3 = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/crypto/crypto.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/crypto/crypto.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.fromArrayBufferToHex = exports2.hasBrowserCrypto = exports2.createCrypto = void 0;
@@ -18927,9 +18927,9 @@ var require_crypto3 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/options.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/options.js
 var require_options = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/options.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/options.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.validate = void 0;
@@ -18950,9 +18950,9 @@ var require_options = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/package.json
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/package.json
 var require_package2 = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/package.json"(exports2, module2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/package.json"(exports2, module2) {
     module2.exports = {
       name: "google-auth-library",
       version: "9.10.0",
@@ -19046,9 +19046,9 @@ var require_package2 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/transporters.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/transporters.js
 var require_transporters = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/transporters.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/transporters.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.DefaultTransporter = void 0;
@@ -19353,9 +19353,9 @@ var require_ecdsa_sig_formatter = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/util.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/util.js
 var require_util2 = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/util.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/util.js"(exports2) {
     "use strict";
     var __classPrivateFieldGet = exports2 && exports2.__classPrivateFieldGet || function(receiver, state, kind, f) {
       if (kind === "a" && !f)
@@ -19433,9 +19433,9 @@ var require_util2 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/authclient.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/authclient.js
 var require_authclient = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/authclient.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/authclient.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.AuthClient = exports2.DEFAULT_EAGER_REFRESH_THRESHOLD_MILLIS = exports2.DEFAULT_UNIVERSE = void 0;
@@ -19525,9 +19525,9 @@ var require_authclient = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/loginticket.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/loginticket.js
 var require_loginticket = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/loginticket.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/loginticket.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.LoginTicket = void 0;
@@ -19575,9 +19575,9 @@ var require_loginticket = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/oauth2client.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/oauth2client.js
 var require_oauth2client = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/oauth2client.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/oauth2client.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.OAuth2Client = exports2.CertificateFormat = exports2.CodeChallengeMethod = void 0;
@@ -20211,9 +20211,9 @@ var require_oauth2client = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/computeclient.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/computeclient.js
 var require_computeclient = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/computeclient.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/computeclient.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.Compute = void 0;
@@ -20301,9 +20301,9 @@ var require_computeclient = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/idtokenclient.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/idtokenclient.js
 var require_idtokenclient = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/idtokenclient.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/idtokenclient.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.IdTokenClient = void 0;
@@ -20345,9 +20345,9 @@ var require_idtokenclient = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/envDetect.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/envDetect.js
 var require_envDetect = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/envDetect.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/envDetect.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.getEnv = exports2.clear = exports2.GCPEnv = void 0;
@@ -20938,9 +20938,9 @@ var require_jws = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/gtoken@7.1.0/node_modules/gtoken/build/src/index.js
+// ../../node_modules/.pnpm/gtoken@7.1.0_encoding@0.1.13/node_modules/gtoken/build/src/index.js
 var require_src4 = __commonJS({
-  "../../node_modules/.pnpm/gtoken@7.1.0/node_modules/gtoken/build/src/index.js"(exports2) {
+  "../../node_modules/.pnpm/gtoken@7.1.0_encoding@0.1.13/node_modules/gtoken/build/src/index.js"(exports2) {
     "use strict";
     var __classPrivateFieldGet = exports2 && exports2.__classPrivateFieldGet || function(receiver, state, kind, f) {
       if (kind === "a" && !f)
@@ -21207,9 +21207,9 @@ var require_src4 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/jwtaccess.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/jwtaccess.js
 var require_jwtaccess = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/jwtaccess.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/jwtaccess.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.JWTAccess = void 0;
@@ -21372,9 +21372,9 @@ var require_jwtaccess = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/jwtclient.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/jwtclient.js
 var require_jwtclient = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/jwtclient.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/jwtclient.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.JWT = void 0;
@@ -21620,9 +21620,9 @@ var require_jwtclient = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/refreshclient.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/refreshclient.js
 var require_refreshclient = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/refreshclient.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/refreshclient.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UserRefreshClient = exports2.USER_REFRESH_ACCOUNT_TYPE = void 0;
@@ -21725,9 +21725,9 @@ var require_refreshclient = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/impersonated.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/impersonated.js
 var require_impersonated = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/impersonated.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/impersonated.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.Impersonated = exports2.IMPERSONATED_ACCOUNT_TYPE = void 0;
@@ -21885,9 +21885,9 @@ var require_impersonated = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/oauth2common.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/oauth2common.js
 var require_oauth2common = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/oauth2common.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/oauth2common.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.getErrorFromOAuthErrorResponse = exports2.OAuthClientAuthHandler = void 0;
@@ -22038,9 +22038,9 @@ var require_oauth2common = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/stscredentials.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/stscredentials.js
 var require_stscredentials = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/stscredentials.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/stscredentials.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.StsCredentials = void 0;
@@ -22127,9 +22127,9 @@ var require_stscredentials = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/baseexternalclient.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/baseexternalclient.js
 var require_baseexternalclient = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/baseexternalclient.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/baseexternalclient.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.BaseExternalAccountClient = exports2.DEFAULT_UNIVERSE = exports2.CLOUD_RESOURCE_MANAGER = exports2.EXTERNAL_ACCOUNT_TYPE = exports2.EXPIRATION_TIME_OFFSET = void 0;
@@ -22473,9 +22473,9 @@ var require_baseexternalclient = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/filesubjecttokensupplier.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/filesubjecttokensupplier.js
 var require_filesubjecttokensupplier = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/filesubjecttokensupplier.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/filesubjecttokensupplier.js"(exports2) {
     "use strict";
     var _a;
     var _b;
@@ -22538,9 +22538,9 @@ var require_filesubjecttokensupplier = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/urlsubjecttokensupplier.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/urlsubjecttokensupplier.js
 var require_urlsubjecttokensupplier = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/urlsubjecttokensupplier.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/urlsubjecttokensupplier.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UrlSubjectTokenSupplier = void 0;
@@ -22589,9 +22589,9 @@ var require_urlsubjecttokensupplier = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/identitypoolclient.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/identitypoolclient.js
 var require_identitypoolclient = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/identitypoolclient.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/identitypoolclient.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.IdentityPoolClient = void 0;
@@ -22679,9 +22679,9 @@ var require_identitypoolclient = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/awsrequestsigner.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/awsrequestsigner.js
 var require_awsrequestsigner = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/awsrequestsigner.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/awsrequestsigner.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.AwsRequestSigner = void 0;
@@ -22824,9 +22824,9 @@ ${credentialScope}
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/defaultawssecuritycredentialssupplier.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/defaultawssecuritycredentialssupplier.js
 var require_defaultawssecuritycredentialssupplier = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/defaultawssecuritycredentialssupplier.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/defaultawssecuritycredentialssupplier.js"(exports2) {
     "use strict";
     var __classPrivateFieldGet = exports2 && exports2.__classPrivateFieldGet || function(receiver, state, kind, f) {
       if (kind === "a" && !f)
@@ -22979,9 +22979,9 @@ var require_defaultawssecuritycredentialssupplier = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/awsclient.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/awsclient.js
 var require_awsclient = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/awsclient.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/awsclient.js"(exports2) {
     "use strict";
     var __classPrivateFieldGet = exports2 && exports2.__classPrivateFieldGet || function(receiver, state, kind, f) {
       if (kind === "a" && !f)
@@ -23101,9 +23101,9 @@ var require_awsclient = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/executable-response.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/executable-response.js
 var require_executable_response = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/executable-response.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/executable-response.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.InvalidSubjectTokenError = exports2.InvalidMessageFieldError = exports2.InvalidCodeFieldError = exports2.InvalidTokenTypeFieldError = exports2.InvalidExpirationTimeFieldError = exports2.InvalidSuccessFieldError = exports2.InvalidVersionFieldError = exports2.ExecutableResponseError = exports2.ExecutableResponse = void 0;
@@ -23201,9 +23201,9 @@ var require_executable_response = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/pluggable-auth-handler.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/pluggable-auth-handler.js
 var require_pluggable_auth_handler = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/pluggable-auth-handler.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/pluggable-auth-handler.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.PluggableAuthHandler = void 0;
@@ -23328,9 +23328,9 @@ var require_pluggable_auth_handler = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/pluggable-auth-client.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/pluggable-auth-client.js
 var require_pluggable_auth_client = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/pluggable-auth-client.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/pluggable-auth-client.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.PluggableAuthClient = exports2.ExecutableError = void 0;
@@ -23446,9 +23446,9 @@ var require_pluggable_auth_client = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/externalclient.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/externalclient.js
 var require_externalclient = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/externalclient.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/externalclient.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.ExternalAccountClient = void 0;
@@ -23492,9 +23492,9 @@ var require_externalclient = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/externalAccountAuthorizedUserClient.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/externalAccountAuthorizedUserClient.js
 var require_externalAccountAuthorizedUserClient = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/externalAccountAuthorizedUserClient.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/externalAccountAuthorizedUserClient.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.ExternalAccountAuthorizedUserClient = exports2.EXTERNAL_ACCOUNT_AUTHORIZED_USER_TYPE = void 0;
@@ -23686,9 +23686,9 @@ var require_externalAccountAuthorizedUserClient = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/googleauth.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/googleauth.js
 var require_googleauth = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/googleauth.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/googleauth.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.GoogleAuth = exports2.CLOUD_SDK_CLIENT_ID = void 0;
@@ -24380,9 +24380,9 @@ var require_googleauth = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/iam.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/iam.js
 var require_iam = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/iam.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/iam.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.IAMAuth = void 0;
@@ -24414,9 +24414,9 @@ var require_iam = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/downscopedclient.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/downscopedclient.js
 var require_downscopedclient = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/downscopedclient.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/downscopedclient.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.DownscopedClient = exports2.EXPIRATION_TIME_OFFSET = exports2.MAX_ACCESS_BOUNDARY_RULES_COUNT = void 0;
@@ -24598,9 +24598,9 @@ var require_downscopedclient = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/passthrough.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/passthrough.js
 var require_passthrough = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/passthrough.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/passthrough.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.PassThroughClient = void 0;
@@ -24645,9 +24645,9 @@ var require_passthrough = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/index.js
+// ../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/index.js
 var require_src5 = __commonJS({
-  "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/index.js"(exports2) {
+  "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.GoogleAuth = exports2.auth = exports2.DefaultTransporter = exports2.PassThroughClient = exports2.PluggableAuthClient = exports2.DownscopedClient = exports2.BaseExternalAccountClient = exports2.ExternalAccountClient = exports2.IdentityPoolClient = exports2.AwsClient = exports2.UserRefreshClient = exports2.LoginTicket = exports2.OAuth2Client = exports2.CodeChallengeMethod = exports2.Impersonated = exports2.JWT = exports2.JWTAccess = exports2.IdTokenClient = exports2.IAMAuth = exports2.GCPEnv = exports2.Compute = exports2.DEFAULT_UNIVERSE = exports2.AuthClient = exports2.gaxios = exports2.gcpMetadata = void 0;
@@ -24744,9 +24744,9 @@ var require_src5 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/errors.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/errors.js
 var require_errors2 = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/errors.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/errors.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.GoogleGenerativeAIError = exports2.GoogleAuthError = exports2.ClientError = void 0;
@@ -24786,9 +24786,9 @@ var require_errors2 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/util/constants.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/util/constants.js
 var require_constants = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/util/constants.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/util/constants.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.CREDENTIAL_ERROR_MESSAGE = exports2.USER_AGENT = exports2.SYSTEM_ROLE = exports2.MODEL_ROLE = exports2.USER_ROLE = exports2.STREAMING_GENERATE_CONTENT_METHOD = exports2.GENERATE_CONTENT_METHOD = void 0;
@@ -24805,9 +24805,9 @@ var require_constants = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/util/index.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/util/index.js
 var require_util3 = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/util/index.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/util/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.constants = void 0;
@@ -24815,9 +24815,9 @@ var require_util3 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/post_fetch_processing.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/post_fetch_processing.js
 var require_post_fetch_processing = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/post_fetch_processing.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/post_fetch_processing.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.processCountTokenResponse = exports2.processUnary = exports2.aggregateResponses = exports2.processStream = exports2.throwErrorIfNotOK = void 0;
@@ -25054,9 +25054,9 @@ var require_post_fetch_processing = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/post_request.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/post_request.js
 var require_post_request = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/post_request.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/post_request.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.postRequest = void 0;
@@ -25149,9 +25149,9 @@ var require_post_request = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/pre_fetch_processing.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/pre_fetch_processing.js
 var require_pre_fetch_processing = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/pre_fetch_processing.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/pre_fetch_processing.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.validateGenerationConfig = exports2.validateGenerateContentRequest = exports2.formatContentRequest = void 0;
@@ -25194,9 +25194,9 @@ var require_pre_fetch_processing = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/generate_content.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/generate_content.js
 var require_generate_content = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/generate_content.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/generate_content.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.generateContentStream = exports2.generateContent = void 0;
@@ -25272,9 +25272,9 @@ var require_generate_content = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/models/chat_session.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/models/chat_session.js
 var require_chat_session = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/models/chat_session.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/models/chat_session.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.ChatSessionPreview = exports2.ChatSession = void 0;
@@ -25575,9 +25575,9 @@ var require_chat_session = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/count_tokens.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/count_tokens.js
 var require_count_tokens = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/count_tokens.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/count_tokens.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.countTokens = void 0;
@@ -25606,9 +25606,9 @@ var require_count_tokens = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/models/generative_models.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/models/generative_models.js
 var require_generative_models = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/models/generative_models.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/models/generative_models.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.GenerativeModelPreview = exports2.GenerativeModel = void 0;
@@ -25946,9 +25946,9 @@ var require_generative_models = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/models/index.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/models/index.js
 var require_models = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/models/index.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/models/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.GenerativeModelPreview = exports2.GenerativeModel = exports2.ChatSessionPreview = exports2.ChatSession = void 0;
@@ -25969,9 +25969,9 @@ var require_models = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/vertex_ai.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/vertex_ai.js
 var require_vertex_ai = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/vertex_ai.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/vertex_ai.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.VertexAI = void 0;
@@ -26123,9 +26123,9 @@ var require_vertex_ai = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/content.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/content.js
 var require_content = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/content.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/content.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.FunctionDeclarationSchemaType = exports2.FinishReason = exports2.BlockedReason = exports2.HarmSeverity = exports2.HarmProbability = exports2.HarmBlockThreshold = exports2.HarmCategory = void 0;
@@ -26193,9 +26193,9 @@ var require_content = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/generate_content_response_handler.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/generate_content_response_handler.js
 var require_generate_content_response_handler = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/generate_content_response_handler.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/generate_content_response_handler.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.GenerateContentResponseHandler = void 0;
@@ -26216,9 +26216,9 @@ var require_generate_content_response_handler = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/index.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/index.js
 var require_types = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/index.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/index.js"(exports2) {
     "use strict";
     var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -26251,9 +26251,9 @@ var require_types = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/index.js
+// ../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/index.js
 var require_src6 = __commonJS({
-  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/index.js"(exports2) {
+  "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/index.js"(exports2) {
     "use strict";
     var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
