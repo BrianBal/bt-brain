@@ -27,7 +27,6 @@ export default class Database {
     async run(query: string, args: any[] = []): Promise<ExecResult> {
         const command = this.buildCommand(query, args)
         let result = await asyncExec(command)
-        console.log("Database.run", command, result)
         return result
     }
 
@@ -40,7 +39,6 @@ export default class Database {
         try {
             json = JSON.parse(result.stdout)
         } catch (e) {
-            throw new Error(`Error parsing query result: ${result.stdout}`)
             json = []
         }
 
@@ -49,7 +47,7 @@ export default class Database {
 
     async get(query: string, args: any[] = []): Promise<any> {
         const rows = await this.all(query, args)
-        return rows[0] || null
+        return rows.length > 0 ? rows[0] : null
     }
 
     async exec(query: string, args: any[] = []): Promise<void> {

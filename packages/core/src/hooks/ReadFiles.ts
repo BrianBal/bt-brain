@@ -6,18 +6,24 @@ const inputReadFile: InputHookFn = async (filePath, options = {}) => {
     let contents = ""
     let encoding = options?.endcoding ?? "utf8"
     let workspace = options.workspace ?? ""
+    // console.log("inputReadFile filePath", filePath)
+    // console.log("inputReadFile workspace", workspace)
 
     let fp = filePath
     if (!fp.startsWith(workspace)) {
         fp = path.join(workspace, filePath)
     }
-    fp = path.resolve(filePath)
+    fp = path.resolve(fp)
 
-    if (filePath) {
-        let fileStat = await stat(fp)
-        if (fileStat?.isFile()) {
-            let buffer = await readFile(fp, encoding)
-            contents = buffer.toString()
+    if (fp) {
+        try {
+            let fileStat = await stat(fp)
+            if (fileStat?.isFile()) {
+                let buffer = await readFile(fp, encoding)
+                contents = buffer.toString()
+            }
+        } catch (e) {
+            contents = ""
         }
     }
     return contents

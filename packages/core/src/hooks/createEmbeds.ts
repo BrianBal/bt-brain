@@ -11,28 +11,24 @@ interface Embedding {
 
 export default async function createEmbeds(dir: string): Promise<boolean> {
     const session = Session.get()
-    const wdir = path.resolve(dir)
+    const wdir = session.workspace ?? path.resolve(dir)
     const files = await listFiles(wdir)
-    console.log("🟢 createEmbeds", wdir, files)
+    console.log("🟢 createEmbeds", wdir)
 
     let embeds: Embedding[] = []
     const embedsDB = await getEmbedsDB()
     try {
         if (embedsDB.doesDatabaseExist()) {
-            console.log("embedsDB", "exists")
             const sql = "select * from collections where name = ?"
             const collection = await embedsDB.get(sql, ["code"])
-            console.log("collection", collection)
             const sql2 =
                 "select id, HEX(content_hash) as content_hash from embeddings where collection_id = ?"
             embeds = await embedsDB.all(sql2, [collection.id])
-            console.log("embeds1", embeds)
         }
     } catch (e) {
         // error caught nothing else to do
         console.log("error", e)
     }
-    console.log("embeds2", embeds)
 
     for (const file of files) {
         const id = file.replace(`${wdir}/`, "")
@@ -43,12 +39,10 @@ export default async function createEmbeds(dir: string): Promise<boolean> {
             hash = await fileHash(file)
             embedHash = embed.content_hash
         }
-        console.log("id", file, id, hash, embedHash)
         if (embedHash !== hash) {
             console.log(`🟠 ${id}`)
             let cmd = `llm embed -i "${file}" --store -d ${session.embedsDatabaseFile} code "${id}"`
-            let res = await asyncExec(cmd)
-            console.log("embed cmd", cmd, res)
+            await asyncExec(cmd)
         } else {
             console.log(`🟢 ${id}`)
         }
@@ -66,8 +60,7 @@ export async function createEmbedForFile(filePath: string) {
     }
     let id = fp.replace(`${wdir}/`, "")
     let cmd = `llm embed -i "${fp}" --store -d ${session.embedsDatabaseFile} code "${id}"`
-    let res = await asyncExec(cmd)
-    console.log("embed cmd", cmd, res)
+    await asyncExec(cmd)
 }
 
 async function fileHash(path: string): Promise<string> {

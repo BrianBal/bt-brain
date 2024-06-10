@@ -12539,7 +12539,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_lib3 = __commonJS2({
-      "../../node_modules/.pnpm/node-fetch@2.7.0_encoding@0.1.13/node_modules/node-fetch/lib/index.js"(exports22, module22) {
+      "../../node_modules/.pnpm/node-fetch@2.7.0/node_modules/node-fetch/lib/index.js"(exports22, module22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         function _interopDefault(ex) {
@@ -13795,7 +13795,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_package = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/package.json"(exports22, module22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/package.json"(exports22, module22) {
         module22.exports = {
           name: "gaxios",
           version: "6.6.0",
@@ -13894,7 +13894,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_util = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/util.js"(exports22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/util.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.pkg = void 0;
@@ -13902,7 +13902,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_common = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/common.js"(exports22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/common.js"(exports22) {
         "use strict";
         var __importDefault = exports22 && exports22.__importDefault || function(mod) {
           return mod && mod.__esModule ? mod : { "default": mod };
@@ -14039,7 +14039,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_retry = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/retry.js"(exports22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/retry.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.getRetryConfig = void 0;
@@ -14469,7 +14469,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_interceptor = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/interceptor.js"(exports22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/interceptor.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GaxiosInterceptorManager = void 0;
@@ -14593,7 +14593,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_common2 = __commonJS2({
-      "../../node_modules/.pnpm/debug@4.3.4_supports-color@8.1.1/node_modules/debug/src/common.js"(exports22, module22) {
+      "../../node_modules/.pnpm/debug@4.3.4/node_modules/debug/src/common.js"(exports22, module22) {
         function setup(env) {
           createDebug.debug = createDebug;
           createDebug.default = createDebug;
@@ -14754,7 +14754,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_browser = __commonJS2({
-      "../../node_modules/.pnpm/debug@4.3.4_supports-color@8.1.1/node_modules/debug/src/browser.js"(exports22, module22) {
+      "../../node_modules/.pnpm/debug@4.3.4/node_modules/debug/src/browser.js"(exports22, module22) {
         exports22.formatArgs = formatArgs;
         exports22.save = save;
         exports22.load = load;
@@ -14932,27 +14932,25 @@ ${end.comment}` : end.comment;
       }
     });
     var require_supports_color = __commonJS2({
-      "../../node_modules/.pnpm/supports-color@8.1.1/node_modules/supports-color/index.js"(exports22, module22) {
+      "../../node_modules/.pnpm/supports-color@7.2.0/node_modules/supports-color/index.js"(exports22, module22) {
         "use strict";
         var os = require("os");
         var tty = require("tty");
         var hasFlag = require_has_flag();
         var { env } = process;
-        var flagForceColor;
+        var forceColor;
         if (hasFlag("no-color") || hasFlag("no-colors") || hasFlag("color=false") || hasFlag("color=never")) {
-          flagForceColor = 0;
+          forceColor = 0;
         } else if (hasFlag("color") || hasFlag("colors") || hasFlag("color=true") || hasFlag("color=always")) {
-          flagForceColor = 1;
+          forceColor = 1;
         }
-        function envForceColor() {
-          if ("FORCE_COLOR" in env) {
-            if (env.FORCE_COLOR === "true") {
-              return 1;
-            }
-            if (env.FORCE_COLOR === "false") {
-              return 0;
-            }
-            return env.FORCE_COLOR.length === 0 ? 1 : Math.min(Number.parseInt(env.FORCE_COLOR, 10), 3);
+        if ("FORCE_COLOR" in env) {
+          if (env.FORCE_COLOR === "true") {
+            forceColor = 1;
+          } else if (env.FORCE_COLOR === "false") {
+            forceColor = 0;
+          } else {
+            forceColor = env.FORCE_COLOR.length === 0 ? 1 : Math.min(parseInt(env.FORCE_COLOR, 10), 3);
           }
         }
         function translateLevel(level) {
@@ -14966,22 +14964,15 @@ ${end.comment}` : end.comment;
             has16m: level >= 3
           };
         }
-        function supportsColor(haveStream, { streamIsTTY, sniffFlags = true } = {}) {
-          const noFlagForceColor = envForceColor();
-          if (noFlagForceColor !== void 0) {
-            flagForceColor = noFlagForceColor;
-          }
-          const forceColor = sniffFlags ? flagForceColor : noFlagForceColor;
+        function supportsColor(haveStream, streamIsTTY) {
           if (forceColor === 0) {
             return 0;
           }
-          if (sniffFlags) {
-            if (hasFlag("color=16m") || hasFlag("color=full") || hasFlag("color=truecolor")) {
-              return 3;
-            }
-            if (hasFlag("color=256")) {
-              return 2;
-            }
+          if (hasFlag("color=16m") || hasFlag("color=full") || hasFlag("color=truecolor")) {
+            return 3;
+          }
+          if (hasFlag("color=256")) {
+            return 2;
           }
           if (haveStream && !streamIsTTY && forceColor === void 0) {
             return 0;
@@ -14998,7 +14989,7 @@ ${end.comment}` : end.comment;
             return 1;
           }
           if ("CI" in env) {
-            if (["TRAVIS", "CIRCLECI", "APPVEYOR", "GITLAB_CI", "GITHUB_ACTIONS", "BUILDKITE", "DRONE"].some((sign) => sign in env) || env.CI_NAME === "codeship") {
+            if (["TRAVIS", "CIRCLECI", "APPVEYOR", "GITLAB_CI", "GITHUB_ACTIONS", "BUILDKITE"].some((sign) => sign in env) || env.CI_NAME === "codeship") {
               return 1;
             }
             return min;
@@ -15010,7 +15001,7 @@ ${end.comment}` : end.comment;
             return 3;
           }
           if ("TERM_PROGRAM" in env) {
-            const version3 = Number.parseInt((env.TERM_PROGRAM_VERSION || "").split(".")[0], 10);
+            const version3 = parseInt((env.TERM_PROGRAM_VERSION || "").split(".")[0], 10);
             switch (env.TERM_PROGRAM) {
               case "iTerm.app":
                 return version3 >= 3 ? 3 : 2;
@@ -15029,22 +15020,19 @@ ${end.comment}` : end.comment;
           }
           return min;
         }
-        function getSupportLevel(stream, options = {}) {
-          const level = supportsColor(stream, {
-            streamIsTTY: stream && stream.isTTY,
-            ...options
-          });
+        function getSupportLevel(stream) {
+          const level = supportsColor(stream, stream && stream.isTTY);
           return translateLevel(level);
         }
         module22.exports = {
           supportsColor: getSupportLevel,
-          stdout: getSupportLevel({ isTTY: tty.isatty(1) }),
-          stderr: getSupportLevel({ isTTY: tty.isatty(2) })
+          stdout: translateLevel(supportsColor(true, tty.isatty(1))),
+          stderr: translateLevel(supportsColor(true, tty.isatty(2)))
         };
       }
     });
     var require_node = __commonJS2({
-      "../../node_modules/.pnpm/debug@4.3.4_supports-color@8.1.1/node_modules/debug/src/node.js"(exports22, module22) {
+      "../../node_modules/.pnpm/debug@4.3.4/node_modules/debug/src/node.js"(exports22, module22) {
         var tty = require("tty");
         var util = require("util");
         exports22.init = init;
@@ -15216,7 +15204,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_src = __commonJS2({
-      "../../node_modules/.pnpm/debug@4.3.4_supports-color@8.1.1/node_modules/debug/src/index.js"(exports22, module22) {
+      "../../node_modules/.pnpm/debug@4.3.4/node_modules/debug/src/index.js"(exports22, module22) {
         if (typeof process === "undefined" || process.type === "renderer" || process.browser === true || process.__nwjs) {
           module22.exports = require_browser();
         } else {
@@ -15699,7 +15687,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_gaxios = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/gaxios.js"(exports22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/gaxios.js"(exports22) {
         "use strict";
         var __createBinding = exports22 && exports22.__createBinding || (Object.create ? function(o, m, k, k2) {
           if (k2 === void 0)
@@ -16132,7 +16120,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_src2 = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/index.js"(exports22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/index.js"(exports22) {
         "use strict";
         var __createBinding = exports22 && exports22.__createBinding || (Object.create ? function(o, m, k, k2) {
           if (k2 === void 0)
@@ -18056,7 +18044,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_gcp_residency = __commonJS2({
-      "../../node_modules/.pnpm/gcp-metadata@6.1.0_encoding@0.1.13/node_modules/gcp-metadata/build/src/gcp-residency.js"(exports22) {
+      "../../node_modules/.pnpm/gcp-metadata@6.1.0/node_modules/gcp-metadata/build/src/gcp-residency.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.detectGCPResidency = exports22.isGoogleComputeEngine = exports22.isGoogleComputeEngineMACAddress = exports22.isGoogleComputeEngineLinux = exports22.isGoogleCloudServerless = exports22.GCE_LINUX_BIOS_PATHS = void 0;
@@ -18109,7 +18097,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_src3 = __commonJS2({
-      "../../node_modules/.pnpm/gcp-metadata@6.1.0_encoding@0.1.13/node_modules/gcp-metadata/build/src/index.js"(exports22) {
+      "../../node_modules/.pnpm/gcp-metadata@6.1.0/node_modules/gcp-metadata/build/src/index.js"(exports22) {
         "use strict";
         var __createBinding = exports22 && exports22.__createBinding || (Object.create ? function(o, m, k, k2) {
           if (k2 === void 0)
@@ -18468,7 +18456,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_crypto = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/crypto/browser/crypto.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/crypto/browser/crypto.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.BrowserCrypto = void 0;
@@ -18562,7 +18550,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_crypto2 = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/crypto/node/crypto.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/crypto/node/crypto.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.NodeCrypto = void 0;
@@ -18624,7 +18612,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_crypto3 = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/crypto/crypto.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/crypto/crypto.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.fromArrayBufferToHex = exports22.hasBrowserCrypto = exports22.createCrypto = void 0;
@@ -18651,7 +18639,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_options = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/options.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/options.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.validate = void 0;
@@ -18672,7 +18660,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_package2 = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/package.json"(exports22, module22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/package.json"(exports22, module22) {
         module22.exports = {
           name: "google-auth-library",
           version: "9.10.0",
@@ -18766,7 +18754,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_transporters = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/transporters.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/transporters.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.DefaultTransporter = void 0;
@@ -19065,7 +19053,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_util2 = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/util.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/util.js"(exports22) {
         "use strict";
         var __classPrivateFieldGet = exports22 && exports22.__classPrivateFieldGet || function(receiver, state, kind, f) {
           if (kind === "a" && !f)
@@ -19143,7 +19131,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_authclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/authclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/authclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.AuthClient = exports22.DEFAULT_EAGER_REFRESH_THRESHOLD_MILLIS = exports22.DEFAULT_UNIVERSE = void 0;
@@ -19233,7 +19221,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_loginticket = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/loginticket.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/loginticket.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.LoginTicket = void 0;
@@ -19281,7 +19269,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_oauth2client = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/oauth2client.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/oauth2client.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.OAuth2Client = exports22.CertificateFormat = exports22.CodeChallengeMethod = void 0;
@@ -19915,7 +19903,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_computeclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/computeclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/computeclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.Compute = void 0;
@@ -20003,7 +19991,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_idtokenclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/idtokenclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/idtokenclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.IdTokenClient = void 0;
@@ -20045,7 +20033,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_envDetect = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/envDetect.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/envDetect.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.getEnv = exports22.clear = exports22.GCPEnv = void 0;
@@ -20622,7 +20610,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_src4 = __commonJS2({
-      "../../node_modules/.pnpm/gtoken@7.1.0_encoding@0.1.13/node_modules/gtoken/build/src/index.js"(exports22) {
+      "../../node_modules/.pnpm/gtoken@7.1.0/node_modules/gtoken/build/src/index.js"(exports22) {
         "use strict";
         var __classPrivateFieldGet = exports22 && exports22.__classPrivateFieldGet || function(receiver, state, kind, f) {
           if (kind === "a" && !f)
@@ -20889,7 +20877,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_jwtaccess = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/jwtaccess.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/jwtaccess.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.JWTAccess = void 0;
@@ -21052,7 +21040,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_jwtclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/jwtclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/jwtclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.JWT = void 0;
@@ -21298,7 +21286,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_refreshclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/refreshclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/refreshclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.UserRefreshClient = exports22.USER_REFRESH_ACCOUNT_TYPE = void 0;
@@ -21401,7 +21389,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_impersonated = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/impersonated.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/impersonated.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.Impersonated = exports22.IMPERSONATED_ACCOUNT_TYPE = void 0;
@@ -21559,7 +21547,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_oauth2common = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/oauth2common.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/oauth2common.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.getErrorFromOAuthErrorResponse = exports22.OAuthClientAuthHandler = void 0;
@@ -21710,7 +21698,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_stscredentials = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/stscredentials.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/stscredentials.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.StsCredentials = void 0;
@@ -21797,7 +21785,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_baseexternalclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/baseexternalclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/baseexternalclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.BaseExternalAccountClient = exports22.DEFAULT_UNIVERSE = exports22.CLOUD_RESOURCE_MANAGER = exports22.EXTERNAL_ACCOUNT_TYPE = exports22.EXPIRATION_TIME_OFFSET = void 0;
@@ -22141,7 +22129,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_filesubjecttokensupplier = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/filesubjecttokensupplier.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/filesubjecttokensupplier.js"(exports22) {
         "use strict";
         var _a;
         var _b;
@@ -22204,7 +22192,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_urlsubjecttokensupplier = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/urlsubjecttokensupplier.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/urlsubjecttokensupplier.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.UrlSubjectTokenSupplier = void 0;
@@ -22253,7 +22241,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_identitypoolclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/identitypoolclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/identitypoolclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.IdentityPoolClient = void 0;
@@ -22341,7 +22329,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_awsrequestsigner = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/awsrequestsigner.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/awsrequestsigner.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.AwsRequestSigner = void 0;
@@ -22484,7 +22472,7 @@ ${credentialScope}
       }
     });
     var require_defaultawssecuritycredentialssupplier = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/defaultawssecuritycredentialssupplier.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/defaultawssecuritycredentialssupplier.js"(exports22) {
         "use strict";
         var __classPrivateFieldGet = exports22 && exports22.__classPrivateFieldGet || function(receiver, state, kind, f) {
           if (kind === "a" && !f)
@@ -22637,7 +22625,7 @@ ${credentialScope}
       }
     });
     var require_awsclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/awsclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/awsclient.js"(exports22) {
         "use strict";
         var __classPrivateFieldGet = exports22 && exports22.__classPrivateFieldGet || function(receiver, state, kind, f) {
           if (kind === "a" && !f)
@@ -22757,7 +22745,7 @@ ${credentialScope}
       }
     });
     var require_executable_response = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/executable-response.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/executable-response.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.InvalidSubjectTokenError = exports22.InvalidMessageFieldError = exports22.InvalidCodeFieldError = exports22.InvalidTokenTypeFieldError = exports22.InvalidExpirationTimeFieldError = exports22.InvalidSuccessFieldError = exports22.InvalidVersionFieldError = exports22.ExecutableResponseError = exports22.ExecutableResponse = void 0;
@@ -22855,7 +22843,7 @@ ${credentialScope}
       }
     });
     var require_pluggable_auth_handler = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/pluggable-auth-handler.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/pluggable-auth-handler.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.PluggableAuthHandler = void 0;
@@ -22980,7 +22968,7 @@ ${credentialScope}
       }
     });
     var require_pluggable_auth_client = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/pluggable-auth-client.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/pluggable-auth-client.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.PluggableAuthClient = exports22.ExecutableError = void 0;
@@ -23096,7 +23084,7 @@ ${credentialScope}
       }
     });
     var require_externalclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/externalclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/externalclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.ExternalAccountClient = void 0;
@@ -23140,7 +23128,7 @@ ${credentialScope}
       }
     });
     var require_externalAccountAuthorizedUserClient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/externalAccountAuthorizedUserClient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/externalAccountAuthorizedUserClient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.ExternalAccountAuthorizedUserClient = exports22.EXTERNAL_ACCOUNT_AUTHORIZED_USER_TYPE = void 0;
@@ -23332,7 +23320,7 @@ ${credentialScope}
       }
     });
     var require_googleauth = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/googleauth.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/googleauth.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GoogleAuth = exports22.CLOUD_SDK_CLIENT_ID = void 0;
@@ -24024,7 +24012,7 @@ ${credentialScope}
       }
     });
     var require_iam = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/iam.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/iam.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.IAMAuth = void 0;
@@ -24056,7 +24044,7 @@ ${credentialScope}
       }
     });
     var require_downscopedclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/downscopedclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/downscopedclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.DownscopedClient = exports22.EXPIRATION_TIME_OFFSET = exports22.MAX_ACCESS_BOUNDARY_RULES_COUNT = void 0;
@@ -24238,7 +24226,7 @@ ${credentialScope}
       }
     });
     var require_passthrough = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/passthrough.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/passthrough.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.PassThroughClient = void 0;
@@ -24283,7 +24271,7 @@ ${credentialScope}
       }
     });
     var require_src5 = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/index.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/index.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GoogleAuth = exports22.auth = exports22.DefaultTransporter = exports22.PassThroughClient = exports22.PluggableAuthClient = exports22.DownscopedClient = exports22.BaseExternalAccountClient = exports22.ExternalAccountClient = exports22.IdentityPoolClient = exports22.AwsClient = exports22.UserRefreshClient = exports22.LoginTicket = exports22.OAuth2Client = exports22.CodeChallengeMethod = exports22.Impersonated = exports22.JWT = exports22.JWTAccess = exports22.IdTokenClient = exports22.IAMAuth = exports22.GCPEnv = exports22.Compute = exports22.DEFAULT_UNIVERSE = exports22.AuthClient = exports22.gaxios = exports22.gcpMetadata = void 0;
@@ -24380,7 +24368,7 @@ ${credentialScope}
       }
     });
     var require_errors2 = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/errors.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/errors.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GoogleGenerativeAIError = exports22.GoogleAuthError = exports22.ClientError = void 0;
@@ -24420,7 +24408,7 @@ ${credentialScope}
       }
     });
     var require_constants = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/util/constants.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/util/constants.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.CREDENTIAL_ERROR_MESSAGE = exports22.USER_AGENT = exports22.SYSTEM_ROLE = exports22.MODEL_ROLE = exports22.USER_ROLE = exports22.STREAMING_GENERATE_CONTENT_METHOD = exports22.GENERATE_CONTENT_METHOD = void 0;
@@ -24437,7 +24425,7 @@ ${credentialScope}
       }
     });
     var require_util3 = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/util/index.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/util/index.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.constants = void 0;
@@ -24445,7 +24433,7 @@ ${credentialScope}
       }
     });
     var require_post_fetch_processing = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/post_fetch_processing.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/post_fetch_processing.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.processCountTokenResponse = exports22.processUnary = exports22.aggregateResponses = exports22.processStream = exports22.throwErrorIfNotOK = void 0;
@@ -24682,7 +24670,7 @@ ${credentialScope}
       }
     });
     var require_post_request = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/post_request.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/post_request.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.postRequest = void 0;
@@ -24775,7 +24763,7 @@ ${credentialScope}
       }
     });
     var require_pre_fetch_processing = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/pre_fetch_processing.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/pre_fetch_processing.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.validateGenerationConfig = exports22.validateGenerateContentRequest = exports22.formatContentRequest = void 0;
@@ -24818,7 +24806,7 @@ ${credentialScope}
       }
     });
     var require_generate_content = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/generate_content.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/generate_content.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.generateContentStream = exports22.generateContent = void 0;
@@ -24894,7 +24882,7 @@ ${credentialScope}
       }
     });
     var require_chat_session = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/models/chat_session.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/models/chat_session.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.ChatSessionPreview = exports22.ChatSession = void 0;
@@ -25195,7 +25183,7 @@ ${credentialScope}
       }
     });
     var require_count_tokens = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/count_tokens.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/count_tokens.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.countTokens = void 0;
@@ -25224,7 +25212,7 @@ ${credentialScope}
       }
     });
     var require_generative_models = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/models/generative_models.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/models/generative_models.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GenerativeModelPreview = exports22.GenerativeModel = void 0;
@@ -25562,7 +25550,7 @@ ${credentialScope}
       }
     });
     var require_models = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/models/index.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/models/index.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GenerativeModelPreview = exports22.GenerativeModel = exports22.ChatSessionPreview = exports22.ChatSession = void 0;
@@ -25583,7 +25571,7 @@ ${credentialScope}
       }
     });
     var require_vertex_ai = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/vertex_ai.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/vertex_ai.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.VertexAI = void 0;
@@ -25735,7 +25723,7 @@ ${credentialScope}
       }
     });
     var require_content = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/content.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/content.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.FunctionDeclarationSchemaType = exports22.FinishReason = exports22.BlockedReason = exports22.HarmSeverity = exports22.HarmProbability = exports22.HarmBlockThreshold = exports22.HarmCategory = void 0;
@@ -25803,7 +25791,7 @@ ${credentialScope}
       }
     });
     var require_generate_content_response_handler = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/generate_content_response_handler.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/generate_content_response_handler.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GenerateContentResponseHandler = void 0;
@@ -25824,7 +25812,7 @@ ${credentialScope}
       }
     });
     var require_types = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/index.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/index.js"(exports22) {
         "use strict";
         var __createBinding = exports22 && exports22.__createBinding || (Object.create ? function(o, m, k, k2) {
           if (k2 === void 0)
@@ -25857,7 +25845,7 @@ ${credentialScope}
       }
     });
     var require_src6 = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/index.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/index.js"(exports22) {
         "use strict";
         var __createBinding = exports22 && exports22.__createBinding || (Object.create ? function(o, m, k, k2) {
           if (k2 === void 0)
@@ -26636,21 +26624,16 @@ ${credentialScope}
     var makeRequest_default = makeRequest;
     var fs2 = __toESM(require("fs"));
     async function runGenerate(template, task2) {
-      console.log("runGenerate template", template);
-      console.log("runGenerate task", task2);
       let system = template.system;
       let input = template.template;
       let session2 = Session2.get();
       if (template.vars) {
         for (let v of template.vars) {
           let val = task2.getData(v.name, v.format);
-          console.log("runGenerate val", v.name, v.format, val);
           system = system.replaceAll(`__${v.name}__`, val);
           input = input.replaceAll(`__${v.name}__`, val);
         }
       }
-      console.log("runGenerate system", system);
-      console.log("runGenerate input", input);
       let logsDir = session2.logsDir;
       if (fs2.existsSync(logsDir)) {
         let fn = `${logsDir}/${task2.id}-${Date.now()}-${template.id}-a.log`;
@@ -26820,7 +26803,6 @@ ${credentialScope}
       async run(query, args = []) {
         const command = this.buildCommand(query, args);
         let result = await asyncExec(command);
-        console.log("Database.run", command, result);
         return result;
       }
       async all(query, args = []) {
@@ -26832,14 +26814,13 @@ ${credentialScope}
         try {
           json = JSON.parse(result.stdout);
         } catch (e) {
-          throw new Error(`Error parsing query result: ${result.stdout}`);
           json = [];
         }
         return json;
       }
       async get(query, args = []) {
         const rows = await this.all(query, args);
-        return rows[0] || null;
+        return rows.length > 0 ? rows[0] : null;
       }
       async exec(query, args = []) {
         const result = await this.run(query, args);
@@ -26864,25 +26845,21 @@ ${credentialScope}
     }
     async function createEmbeds(dir) {
       const session2 = Session2.get();
-      const wdir = path3.resolve(dir);
+      const wdir = session2.workspace ?? path3.resolve(dir);
       const files = await listFiles(wdir);
-      console.log("\u{1F7E2} createEmbeds", wdir, files);
+      console.log("\u{1F7E2} createEmbeds", wdir);
       let embeds = [];
       const embedsDB = await getEmbedsDB();
       try {
         if (embedsDB.doesDatabaseExist()) {
-          console.log("embedsDB", "exists");
           const sql = "select * from collections where name = ?";
           const collection = await embedsDB.get(sql, ["code"]);
-          console.log("collection", collection);
           const sql2 = "select id, HEX(content_hash) as content_hash from embeddings where collection_id = ?";
           embeds = await embedsDB.all(sql2, [collection.id]);
-          console.log("embeds1", embeds);
         }
       } catch (e) {
         console.log("error", e);
       }
-      console.log("embeds2", embeds);
       for (const file of files) {
         const id = file.replace(`${wdir}/`, "");
         const embed = embeds.find((e) => e.id === id);
@@ -26892,12 +26869,10 @@ ${credentialScope}
           hash = await fileHash(file);
           embedHash = embed.content_hash;
         }
-        console.log("id", file, id, hash, embedHash);
         if (embedHash !== hash) {
           console.log(`\u{1F7E0} ${id}`);
           let cmd = `llm embed -i "${file}" --store -d ${session2.embedsDatabaseFile} code "${id}"`;
-          let res = await asyncExec(cmd);
-          console.log("embed cmd", cmd, res);
+          await asyncExec(cmd);
         } else {
           console.log(`\u{1F7E2} ${id}`);
         }
@@ -26913,8 +26888,7 @@ ${credentialScope}
       }
       let id = fp.replace(`${wdir}/`, "");
       let cmd = `llm embed -i "${fp}" --store -d ${session2.embedsDatabaseFile} code "${id}"`;
-      let res = await asyncExec(cmd);
-      console.log("embed cmd", cmd, res);
+      await asyncExec(cmd);
     }
     async function fileHash(path8) {
       const result = await asyncExec(`md5 -q ${path8}`);
@@ -26952,6 +26926,7 @@ ${credentialScope}
       if (!dir) {
         dir = Session2.get().localTemplatesDir;
       }
+      console.log("loadTemplates local", dir);
       let listing = import_fs2.default.readdirSync(dir);
       let files = listing.filter((file) => file.endsWith(".yaml")).map((f) => `${dir}/${f}`);
       let dirs = listing.filter((f) => import_fs2.default.statSync(`${dir}/${f}`).isDirectory()).map((d) => `${dir}/${d}`);
@@ -27125,12 +27100,16 @@ ${credentialScope}
       if (!fp.startsWith(workspace2)) {
         fp = path4.join(workspace2, filePath);
       }
-      fp = path4.resolve(filePath);
-      if (filePath) {
-        let fileStat = await (0, import_promises.stat)(fp);
-        if (fileStat?.isFile()) {
-          let buffer = await (0, import_promises.readFile)(fp, encoding);
-          contents = buffer.toString();
+      fp = path4.resolve(fp);
+      if (fp) {
+        try {
+          let fileStat = await (0, import_promises.stat)(fp);
+          if (fileStat?.isFile()) {
+            let buffer = await (0, import_promises.readFile)(fp, encoding);
+            contents = buffer.toString();
+          }
+        } catch (e) {
+          contents = "";
         }
       }
       return contents;
@@ -27278,45 +27257,48 @@ find any keywords, variable, functions, libraries, directories and files in the 
               testFilePath = json.id.replace(`.${ext}`, `.test.${ext}`);
             }
             if (codeFilePath) {
-              let f = path6.join(dir, codeFilePath);
-              let fStat = await (0, import_promises2.stat)(f);
-              if (fStat.isFile()) {
-                let content2 = await (0, import_promises2.readFile)(f, "utf-8");
-                files.push({
-                  file: codeFilePath,
-                  content: content2
-                });
+              try {
+                let f = path6.join(dir, codeFilePath);
+                let fStat = await (0, import_promises2.stat)(f);
+                if (fStat.isFile()) {
+                  let content2 = await (0, import_promises2.readFile)(f, "utf-8");
+                  files.push({
+                    file: codeFilePath,
+                    content: content2
+                  });
+                }
+              } catch (e) {
               }
             }
             if (testFilePath) {
-              let f = path6.join(dir, testFilePath);
-              let fStat = await (0, import_promises2.stat)(f);
-              if (fStat.isFile()) {
-                let content2 = await (0, import_promises2.readFile)(f, "utf-8");
-                files.push({
-                  file: testFilePath,
-                  content: content2
-                });
+              try {
+                let f = path6.join(dir, testFilePath);
+                let fStat = await (0, import_promises2.stat)(f);
+                if (fStat.isFile()) {
+                  let content2 = await (0, import_promises2.readFile)(f, "utf-8");
+                  files.push({
+                    file: testFilePath,
+                    content: content2
+                  });
+                }
+              } catch (e) {
               }
             }
           } catch (e) {
+            console.log("similarFiles error", e);
           }
         }
       }
       return files;
     };
     var similarFilesToFile = async (file, options = {}) => {
-      console.log("similarFilesToFile options", options);
-      console.log("similarFilesToFile file", file);
       let session2 = Session2.get();
       let dir = options.workspace ?? process.cwd();
-      console.log("similarFilesToFile dir", dir);
       let fp = file;
       if (!fp.startsWith(dir)) {
         fp = path6.resolve(path6.join(dir, fp));
       }
       let id = fp.replace(dir + "/", "");
-      console.log("similarFilesToFile id", id);
       let maxTokens = 4096;
       if (options.max_tokens) {
         maxTokens = parseInt(options.max_tokens, 10);
@@ -27329,12 +27311,8 @@ find any keywords, variable, functions, libraries, directories and files in the 
           num = 10;
         }
       }
-      console.log("similarFilesToFile num", num);
-      console.log("similarFilesToFile maxTokens", maxTokens);
       let cmd = `llm similar -n ${num} -d ${session2.embedsDatabaseFile} code "${id}"`;
       let output = await asyncExec(cmd);
-      console.log("SimilarFilesToFile cmd", cmd);
-      console.log("SimilarFilesToFile output", output);
       let tokenCount = 0;
       let files = [];
       if (output.stdout) {
@@ -27355,37 +27333,42 @@ find any keywords, variable, functions, libraries, directories and files in the 
             }
             if (codeFilePath) {
               let f = path6.join(dir, codeFilePath);
-              let fStat = await (0, import_promises2.stat)(f);
-              if (fStat.isFile()) {
-                let content = await (0, import_promises2.readFile)(f, "utf-8");
-                tokenCount += Math.round(content.length / 4);
-                files.push({
-                  file: codeFilePath,
-                  content
-                });
+              try {
+                let fStat = await (0, import_promises2.stat)(f);
+                if (fStat.isFile()) {
+                  let content = await (0, import_promises2.readFile)(f, "utf-8");
+                  tokenCount += Math.round(content.length / 4);
+                  files.push({
+                    file: codeFilePath,
+                    content
+                  });
+                }
+              } catch (e) {
               }
             }
             if (testFilePath) {
-              let f = path6.join(dir, testFilePath);
-              let fStat = await (0, import_promises2.stat)(f);
-              if (fStat.isFile()) {
-                let content = await (0, import_promises2.readFile)(f, "utf-8");
-                tokenCount += Math.round(content.length / 4);
-                files.push({
-                  file: testFilePath,
-                  content
-                });
+              try {
+                let f = path6.join(dir, testFilePath);
+                let fStat = await (0, import_promises2.stat)(f);
+                if (fStat.isFile()) {
+                  let content = await (0, import_promises2.readFile)(f, "utf-8");
+                  tokenCount += Math.round(content.length / 4);
+                  files.push({
+                    file: testFilePath,
+                    content
+                  });
+                }
+              } catch (e) {
               }
             }
           } catch (e) {
-            console.log("error", e);
+            console.log("similarFilesToFile error", e);
           }
           if (tokenCount > maxTokens) {
             break;
           }
         }
       }
-      console.log("SimilarFilesToFile files", files);
       if (files.length === 0) {
         let basename2 = path6.basename(fp);
         files = await similarFiles(basename2, { ...options, noKeyWords: true });
@@ -27497,6 +27480,7 @@ find any keywords, variable, functions, libraries, directories and files in the 
           if (t.type === "generate") {
             let rawOutput = await runGenerate(t, this) ?? "";
             if (t.human_review) {
+              console.log("rawOutput", rawOutput);
               rawOutput = await this.requestHumanReview(
                 rawOutput,
                 this.getData("active_file")
@@ -27527,7 +27511,6 @@ find any keywords, variable, functions, libraries, directories and files in the 
       async handleTemplateOutput(template, rawOutput) {
         let parsedOutput = "";
         let respConfig = template.response ?? {};
-        console.log("handleTemplateOutput respConfig", respConfig);
         switch (respConfig.format) {
           case "yaml":
             parsedOutput = (0, import_yaml4.parse)(yamlify(rawOutput));
@@ -27541,20 +27524,11 @@ find any keywords, variable, functions, libraries, directories and files in the 
           default:
             parsedOutput = rawOutput;
         }
-        console.log("handleTemplateOutput parsedOutput", parsedOutput);
         let respConfigHooks = respConfig.hooks ?? [];
-        console.log("handleTemplateOutput respConfigHooks", respConfigHooks);
         for (let respHook of respConfigHooks) {
           for (let hook of this.hooks) {
             for (let hookfn of hook.funcs) {
-              console.log(
-                "handleTemplateOutput hook search",
-                hookfn.name,
-                hookfn.type,
-                respHook.name
-              );
               if (hookfn.type === "response" && hookfn.name === respHook.name) {
-                console.log("handleTemplateOutput found hookfn", hookfn.name);
                 let fn = hookfn.fn;
                 let param = respHook.param ? this.getData(respHook.param) : null;
                 let options = respConfig.options ?? {};
@@ -27564,12 +27538,6 @@ find any keywords, variable, functions, libraries, directories and files in the 
                 options.cmd_test = this.data.cmd_test;
                 options.cmd_lint = this.data.cmd_lint;
                 options.cmd_format = this.data.cmd_format;
-                console.log("handleTemplateOutput calling hookfn", hookfn.name);
-                console.log("handleTemplateOutput calling rawOutput", rawOutput);
-                console.log("handleTemplateOutput calling parsedOutput", parsedOutput);
-                console.log("handleTemplateOutput calling param key", respHook.params);
-                console.log("handleTemplateOutput calling param val", param);
-                console.log("handleTemplateOutput calling param options", options);
                 await fn(rawOutput, parsedOutput, param, options);
               }
             }
@@ -27587,8 +27555,7 @@ find any keywords, variable, functions, libraries, directories and files in the 
             for (let hook of this.hooks) {
               for (let hookfn of hook.funcs) {
                 if (hookfn.type === "input" && hookfn.name === v.type) {
-                  console.log("fillInputVars hook", hookfn.name);
-                  let param = v.param ? this.getData(v.param) : null;
+                  let param = v.param ? this.getData(v.param) ?? v.param : null;
                   let options = v.options ?? {};
                   options.workspace = this.workspace;
                   options.language = this.data.language;
@@ -27598,18 +27565,7 @@ find any keywords, variable, functions, libraries, directories and files in the 
                   options.cmd_format = this.data.cmd_format;
                   options.max_tokens = modelInfo.maxInputTokens ?? 4096;
                   let fn = hookfn.fn;
-                  console.log("fillInputVars", hookfn.name, param, options);
                   let data = await fn(param, options);
-                  console.log("fillInputVars", hookfn.name, "data res", data);
-                  console.log(
-                    "fillInputVars",
-                    hookfn.name,
-                    "setting",
-                    v.name,
-                    data,
-                    v.dataType,
-                    v.modifier
-                  );
                   this.setData(v.name, data, v.dataType, v.modifier);
                 }
               }

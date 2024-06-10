@@ -52,29 +52,38 @@ const similarFiles: InputHookFn = async (content, options = {}) => {
                 }
 
                 if (codeFilePath) {
-                    let f = path.join(dir, codeFilePath)
-                    let fStat = await stat(f)
-                    if (fStat.isFile()) {
-                        let content = await readFile(f, "utf-8")
-                        files.push({
-                            file: codeFilePath,
-                            content: content,
-                        })
+                    try {
+                        let f = path.join(dir, codeFilePath)
+                        let fStat = await stat(f)
+                        if (fStat.isFile()) {
+                            let content = await readFile(f, "utf-8")
+                            files.push({
+                                file: codeFilePath,
+                                content: content,
+                            })
+                        }
+                    } catch (e) {
+                        // error handled nothing else to do
                     }
                 }
                 if (testFilePath) {
-                    let f = path.join(dir, testFilePath)
-                    let fStat = await stat(f)
-                    if (fStat.isFile()) {
-                        let content = await readFile(f, "utf-8")
-                        files.push({
-                            file: testFilePath,
-                            content: content,
-                        })
+                    try {
+                        let f = path.join(dir, testFilePath)
+                        let fStat = await stat(f)
+                        if (fStat.isFile()) {
+                            let content = await readFile(f, "utf-8")
+                            files.push({
+                                file: testFilePath,
+                                content: content,
+                            })
+                        }
+                    } catch (e) {
+                        // error handled nothing else to do
                     }
                 }
             } catch (e) {
                 // error handled nothing else to do
+                console.log("similarFiles error", e)
             }
         }
     }
@@ -83,17 +92,13 @@ const similarFiles: InputHookFn = async (content, options = {}) => {
 }
 
 const similarFilesToFile: InputHookFn = async (file, options = {}) => {
-    console.log("similarFilesToFile options", options)
-    console.log("similarFilesToFile file", file)
     let session = Session.get()
     let dir = options.workspace ?? process.cwd()
-    console.log("similarFilesToFile dir", dir)
     let fp = file
     if (!fp.startsWith(dir)) {
         fp = path.resolve(path.join(dir, fp))
     }
     let id = fp.replace(dir + "/", "")
-    console.log("similarFilesToFile id", id)
 
     let maxTokens = 4096
     if (options.max_tokens) {
@@ -108,13 +113,9 @@ const similarFilesToFile: InputHookFn = async (file, options = {}) => {
             num = 10
         }
     }
-    console.log("similarFilesToFile num", num)
-    console.log("similarFilesToFile maxTokens", maxTokens)
 
     let cmd = `llm similar -n ${num} -d ${session.embedsDatabaseFile} code "${id}"`
     let output = await asyncExec(cmd)
-    console.log("SimilarFilesToFile cmd", cmd)
-    console.log("SimilarFilesToFile output", output)
     let tokenCount = 0
     let files: FileItem[] = []
     if (output.stdout) {
@@ -136,38 +137,46 @@ const similarFilesToFile: InputHookFn = async (file, options = {}) => {
 
                 if (codeFilePath) {
                     let f = path.join(dir, codeFilePath)
-                    let fStat = await stat(f)
-                    if (fStat.isFile()) {
-                        let content = await readFile(f, "utf-8")
-                        tokenCount += Math.round(content.length / 4)
-                        files.push({
-                            file: codeFilePath,
-                            content: content,
-                        })
+                    try {
+                        let fStat = await stat(f)
+                        if (fStat.isFile()) {
+                            let content = await readFile(f, "utf-8")
+                            tokenCount += Math.round(content.length / 4)
+                            files.push({
+                                file: codeFilePath,
+                                content: content,
+                            })
+                        }
+                    } catch (e) {
+                        // error handled nothing else to do
                     }
                 }
                 if (testFilePath) {
-                    let f = path.join(dir, testFilePath)
-                    let fStat = await stat(f)
-                    if (fStat.isFile()) {
-                        let content = await readFile(f, "utf-8")
-                        tokenCount += Math.round(content.length / 4)
-                        files.push({
-                            file: testFilePath,
-                            content: content,
-                        })
+                    try {
+                        let f = path.join(dir, testFilePath)
+                        let fStat = await stat(f)
+                        if (fStat.isFile()) {
+                            let content = await readFile(f, "utf-8")
+                            tokenCount += Math.round(content.length / 4)
+                            files.push({
+                                file: testFilePath,
+                                content: content,
+                            })
+                        }
+                    } catch (e) {
+                        // error handled nothing else to do
                     }
                 }
             } catch (e) {
                 // error handled nothing else to do
-                console.log("error", e)
+                console.log("similarFilesToFile error", e)
             }
             if (tokenCount > maxTokens) {
                 break
             }
         }
     }
-    console.log("SimilarFilesToFile files", files)
+    // console.log("SimilarFilesToFile files", files)
     if (files.length === 0) {
         let basename = path.basename(fp)
         files = await similarFiles(basename, { ...options, noKeyWords: true })

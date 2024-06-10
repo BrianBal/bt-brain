@@ -15,8 +15,8 @@ export default async function runGenerate(
     template: AiTemplate,
     task: AiTask
 ): Promise<string | null> {
-    console.log("runGenerate template", template)
-    console.log("runGenerate task", task)
+    // console.log("runGenerate template", template)
+    // console.log("runGenerate task", task)
     let system = template.system!
     let input = template.template!
     let session = Session.get()
@@ -24,7 +24,7 @@ export default async function runGenerate(
     if (template.vars) {
         for (let v of template.vars) {
             let val = task.getData(v.name, v.format)
-            console.log("runGenerate val", v.name, v.format, val)
+            // console.log("runGenerate val", v.name, v.format, val)
 
             // fill in system template
             system = system.replaceAll(`__${v.name}__`, val)
@@ -33,8 +33,8 @@ export default async function runGenerate(
             input = input.replaceAll(`__${v.name}__`, val)
         }
     }
-    console.log("runGenerate system", system)
-    console.log("runGenerate input", input)
+    // console.log("runGenerate system", system)
+    // console.log("runGenerate input", input)
 
     let logsDir = session.logsDir
     if (fs.existsSync(logsDir)) {

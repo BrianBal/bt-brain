@@ -25,14 +25,14 @@
             "outFiles": ["${workspaceFolder}/apps/brain-vscode/src/**/*.js"]
         },
         {
-            "name": "VSCodeExt Run",
+            "name": "Database",
             "type": "extensionHost",
             "request": "launch",
             "args": [
-                "--extensionDevelopmentPath=${workspaceFolder}/apps/btvscode",
-                "/Users/bal/labs/bt-cast"
+                "--extensionDevelopmentPath=${workspaceFolder}/apps/brain-vscode",
+                "/Users/bal/trace/database"
             ],
-            "outFiles": ["${workspaceFolder}/apps/btvscode/dist/**/*.js"]
+            "outFiles": ["${workspaceFolder}/apps/brain-vscode/src/**/*.js"]
         }
     ]
 }

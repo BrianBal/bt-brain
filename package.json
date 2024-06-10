@@ -1,8 +1,14 @@
 {
-    "name": "bt-pathways",
+    "name": "@brianbal/bt-brain",
     "version": "1.0.0",
     "description": "",
     "main": "dist/main.js",
+    "publishConfig": {
+        "@brianbal:registry": "https://npm.pkg.github.com"
+    },
+    "repository": {
+        "url": "https://github.com/brianbal/bt-brain"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "core": "pnpm --filter core",

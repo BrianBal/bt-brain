@@ -121,6 +121,7 @@ export default class AiTask {
             if (t.type === "generate") {
                 let rawOutput = (await runGenerate(t, this)) ?? ""
                 if (t.human_review) {
+                    console.log("rawOutput", rawOutput)
                     rawOutput = await this.requestHumanReview(
                         rawOutput,
                         this.getData("active_file") // TODO: this could be better
@@ -157,7 +158,7 @@ export default class AiTask {
     async handleTemplateOutput(template: AiTemplate, rawOutput: string) {
         let parsedOutput = ""
         let respConfig: AiTemplateOptions = template.response ?? {}
-        console.log("handleTemplateOutput respConfig", respConfig)
+        // console.log("handleTemplateOutput respConfig", respConfig)
 
         // parse output
         switch (respConfig.format) {
@@ -173,22 +174,22 @@ export default class AiTask {
             default:
                 parsedOutput = rawOutput
         }
-        console.log("handleTemplateOutput parsedOutput", parsedOutput)
+        // console.log("handleTemplateOutput parsedOutput", parsedOutput)
 
         // run hooks to write files, or something do something else with output
         let respConfigHooks = respConfig.hooks ?? []
-        console.log("handleTemplateOutput respConfigHooks", respConfigHooks)
+        // console.log("handleTemplateOutput respConfigHooks", respConfigHooks)
         for (let respHook of respConfigHooks) {
             for (let hook of this.hooks) {
                 for (let hookfn of hook.funcs) {
-                    console.log(
-                        "handleTemplateOutput hook search",
-                        hookfn.name,
-                        hookfn.type,
-                        respHook.name
-                    )
+                    // console.log(
+                    //     "handleTemplateOutput hook search",
+                    //     hookfn.name,
+                    //     hookfn.type,
+                    //     respHook.name
+                    // )
                     if (hookfn.type === "response" && hookfn.name === respHook.name) {
-                        console.log("handleTemplateOutput found hookfn", hookfn.name)
+                        // console.log("handleTemplateOutput found hookfn", hookfn.name)
                         let fn = hookfn.fn as ResponseHookFn
                         let param = respHook.param ? this.getData(respHook.param) : null
                         let options = respConfig.options ?? {}
@@ -198,12 +199,12 @@ export default class AiTask {
                         options.cmd_test = this.data.cmd_test
                         options.cmd_lint = this.data.cmd_lint
                         options.cmd_format = this.data.cmd_format
-                        console.log("handleTemplateOutput calling hookfn", hookfn.name)
-                        console.log("handleTemplateOutput calling rawOutput", rawOutput)
-                        console.log("handleTemplateOutput calling parsedOutput", parsedOutput)
-                        console.log("handleTemplateOutput calling param key", respHook.params)
-                        console.log("handleTemplateOutput calling param val", param)
-                        console.log("handleTemplateOutput calling param options", options)
+                        // console.log("handleTemplateOutput calling hookfn", hookfn.name)
+                        // console.log("handleTemplateOutput calling rawOutput", rawOutput)
+                        // console.log("handleTemplateOutput calling parsedOutput", parsedOutput)
+                        // console.log("handleTemplateOutput calling param key", respHook.params)
+                        // console.log("handleTemplateOutput calling param val", param)
+                        // console.log("handleTemplateOutput calling param options", options)
                         await fn(rawOutput, parsedOutput, param, options)
                     }
                 }
@@ -226,8 +227,8 @@ export default class AiTask {
                 for (let hook of this.hooks) {
                     for (let hookfn of hook.funcs) {
                         if (hookfn.type === "input" && hookfn.name === v.type) {
-                            console.log("fillInputVars hook", hookfn.name)
-                            let param = v.param ? this.getData(v.param) : null
+                            // console.log("fillInputVars hook", hookfn.name)
+                            let param = v.param ? this.getData(v.param) ?? v.param : null
                             let options = v.options ?? {}
                             options.workspace = this.workspace
                             options.language = this.data.language
@@ -238,18 +239,18 @@ export default class AiTask {
                             options.max_tokens = modelInfo.maxInputTokens ?? 4096
 
                             let fn = hookfn.fn as InputHookFn
-                            console.log("fillInputVars", hookfn.name, param, options)
+                            // console.log("fillInputVars", hookfn.name, param, options)
                             let data = await fn(param, options)
-                            console.log("fillInputVars", hookfn.name, "data res", data)
-                            console.log(
-                                "fillInputVars",
-                                hookfn.name,
-                                "setting",
-                                v.name,
-                                data,
-                                v.dataType,
-                                v.modifier
-                            )
+                            // console.log("fillInputVars", hookfn.name, "data res", data)
+                            // console.log(
+                            //     "fillInputVars",
+                            //     hookfn.name,
+                            //     "setting",
+                            //     v.name,
+                            //     data,
+                            //     v.dataType,
+                            //     v.modifier
+                            // )
                             this.setData(v.name, data, v.dataType, v.modifier)
                         }
                     }

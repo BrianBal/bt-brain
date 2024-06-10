@@ -2,22 +2,28 @@
     "name": "cli",
     "private": true,
     "version": "0.0.0",
-    "type": "module",
     "main": "dist/cli.js",
-    "types": "dist/main.d.ts",
     "bin": {
         "pathways": "dist/cli.js"
     },
     "scripts": {
-        "dev": "vite",
-        "build": "tsc && vite build",
-        "preview": "vite preview"
+        "build": "tsc && esbuild ./src/cli.ts  --bundle --outfile=./dist/cli.js --format=cjs --platform=node",
+        "start": "pnpm build && node ./dist/cli.js --workspace ../../"
     },
     "dependencies": {
-        "core": "workspace:*"
+        "@inquirer/confirm": "^3.1.9",
+        "@inquirer/editor": "^2.1.9",
+        "@inquirer/prompts": "^5.0.5",
+        "@types/inquirer": "^9.0.7",
+        "core": "workspace:*",
+        "esbuild": "^0.20.2",
+        "inquirer": "^9.2.23",
+        "inquirer-file-tree-selection-prompt": "^2.0.5",
+        "yargs": "^17.7.2"
     },
     "devDependencies": {
         "@types/node": "^20.12.12",
+        "@types/yargs": "^17.0.32",
         "typescript": "^5.2.2",
         "vite": "^5.2.0"
     }

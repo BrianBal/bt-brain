@@ -23,6 +23,7 @@ export async function loadTemplates(dir: string | null = null): Promise<Array<Ai
     if (!dir) {
         dir = Session.get().localTemplatesDir
     }
+    console.log("loadTemplates local", dir)
     let listing = fs.readdirSync(dir)
 
     // list files in templates directory
