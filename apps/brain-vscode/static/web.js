@@ -9,6 +9,7 @@ let main = document.getElementById("main")
 
 let data = {
     screen: "choose-template",
+    vscode_active_file: null,
     templates: [],
     models: [],
     defaultModel: null,
@@ -105,6 +106,10 @@ const handleMessage = (e) => {
                 defaultModel: message.data.defaultModel,
             })
             break
+        case "vscode-active-file":
+            console.log("vscode-active-file", message.data)
+            setData({ vscode_active_file: message.data })
+            break
         case "human-review":
             setData({ screen: "human-review", humanReview: message.data })
             break
@@ -117,7 +122,13 @@ const app = async (data) => {
     console.log("app", data)
     switch (data.screen) {
         case "choose-template":
-            return chooseTemplate(data.templates, data.models, data.defaultModel, setData)
+            return chooseTemplate(
+                data.templates,
+                data.vscode_active_file,
+                data.models,
+                data.defaultModel,
+                setData
+            )
             break
         case "gather-data":
             return gatherData(

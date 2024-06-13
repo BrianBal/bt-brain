@@ -15,6 +15,16 @@
             "outFiles": ["${workspaceFolder}/apps/brain-vscode/src/**/*.js"]
         },
         {
+            "name": "Open Web Trace ID",
+            "type": "extensionHost",
+            "request": "launch",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}/apps/brain-vscode",
+                "/Users/bal/trace/web-traceid-v2"
+            ],
+            "outFiles": ["${workspaceFolder}/apps/brain-vscode/src/**/*.js"]
+        },
+        {
             "name": "BRAIN Run",
             "type": "extensionHost",
             "request": "launch",

@@ -18,23 +18,26 @@ const makeRequest = async (
         throw "Model not found"
     }
 
+    console.log("makeRequest start", modelInfo.service, modelInfo.model)
+    let resp = null
     if (modelInfo.service === "groq") {
-        return await groqRequest(userPrompt, systemMessage, modelInfo, examples)
+        resp = await groqRequest(userPrompt, systemMessage, modelInfo, examples)
     }
     if (modelInfo.service === "openai") {
-        return await openaiRequest(userPrompt, systemMessage, modelInfo, examples)
+        resp = await openaiRequest(userPrompt, systemMessage, modelInfo, examples)
     }
     if (modelInfo.service === "anthropic") {
-        return await anthropicRequest(userPrompt, systemMessage, modelInfo, examples)
+        resp = await anthropicRequest(userPrompt, systemMessage, modelInfo, examples)
     }
     if (modelInfo.service === "ollama") {
-        return await ollamaRequest(userPrompt, systemMessage, modelInfo, examples)
+        resp = await ollamaRequest(userPrompt, systemMessage, modelInfo, examples)
     }
     if (modelInfo.service === "google") {
-        return await googleRequest(userPrompt, systemMessage, modelInfo, examples)
+        resp = await googleRequest(userPrompt, systemMessage, modelInfo, examples)
     }
+    console.log("makeRequest resp", resp)
 
-    return null
+    return resp
 }
 
 export default makeRequest

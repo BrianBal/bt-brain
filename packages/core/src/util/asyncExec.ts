@@ -10,7 +10,7 @@ export interface ExecResult {
 export default function asyncExec(command: string): Promise<ExecResult> {
     let session = Session.get()
     return new Promise<ExecResult>((resolve) => {
-        exec(command, { cwd: session.workspace }, (error, stdout, stderr) => {
+        exec(command, { cwd: session.workspace, env: process.env }, (error, stdout, stderr) => {
             // get the return status code
             let code: number | undefined = error ? (error as ExecException).code : 0
             resolve({ code, stdout, stderr })

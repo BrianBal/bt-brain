@@ -26604,22 +26604,25 @@ ${credentialScope}
       if (!modelInfo) {
         throw "Model not found";
       }
+      console.log("makeRequest start", modelInfo.service, modelInfo.model);
+      let resp = null;
       if (modelInfo.service === "groq") {
-        return await groq_default(userPrompt, systemMessage, modelInfo, examples);
+        resp = await groq_default(userPrompt, systemMessage, modelInfo, examples);
       }
       if (modelInfo.service === "openai") {
-        return await openai_default(userPrompt, systemMessage, modelInfo, examples);
+        resp = await openai_default(userPrompt, systemMessage, modelInfo, examples);
       }
       if (modelInfo.service === "anthropic") {
-        return await anthropic_default(userPrompt, systemMessage, modelInfo, examples);
+        resp = await anthropic_default(userPrompt, systemMessage, modelInfo, examples);
       }
       if (modelInfo.service === "ollama") {
-        return await ollama_default(userPrompt, systemMessage, modelInfo, examples);
+        resp = await ollama_default(userPrompt, systemMessage, modelInfo, examples);
       }
       if (modelInfo.service === "google") {
-        return await google_default(userPrompt, systemMessage, modelInfo, examples);
+        resp = await google_default(userPrompt, systemMessage, modelInfo, examples);
       }
-      return null;
+      console.log("makeRequest resp", resp);
+      return resp;
     };
     var makeRequest_default = makeRequest;
     var fs2 = __toESM(require("fs"));
@@ -26664,7 +26667,7 @@ ${credentialScope}
     function asyncExec(command) {
       let session2 = Session2.get();
       return new Promise((resolve6) => {
-        (0, import_child_process.exec)(command, { cwd: session2.workspace }, (error, stdout, stderr) => {
+        (0, import_child_process.exec)(command, { cwd: session2.workspace, env: process.env }, (error, stdout, stderr) => {
           let code = error ? error.code : 0;
           resolve6({ code, stdout, stderr });
         });
@@ -27101,6 +27104,7 @@ ${credentialScope}
         fp = path4.join(workspace2, filePath);
       }
       fp = path4.resolve(fp);
+      console.log("inputReadFile fp", fp);
       if (fp) {
         try {
           let fileStat = await (0, import_promises.stat)(fp);
@@ -27109,6 +27113,7 @@ ${credentialScope}
             contents = buffer.toString();
           }
         } catch (e) {
+          console.log("inputReadFile error", e);
           contents = "";
         }
       }
@@ -27150,7 +27155,7 @@ ${credentialScope}
         filePath = path5.join(dir, filePath);
       }
       let content = "";
-      if (typeof parsedOutput === "string") {
+      if (typeof parsedOutput === "string" && parsedOutput.length > 0) {
         content = parsedOutput;
       } else {
         content = rawOutput ?? "";
@@ -27420,6 +27425,9 @@ find any keywords, variable, functions, libraries, directories and files in the 
       requestHumanReview = async (text, _context) => {
         return text;
       };
+      performExternalEdit = async (text) => {
+        return text;
+      };
       static async allTemplates() {
         return await loadAllTemplates();
       }
@@ -27543,6 +27551,9 @@ find any keywords, variable, functions, libraries, directories and files in the 
             }
           }
         }
+        if (respConfig.external_edit) {
+          this.performExternalEdit(parsedOutput ?? rawOutput);
+        }
         if (respConfig.save_data) {
           let sd = respConfig.save_data;
           this.setData(sd.key, parsedOutput ?? rawOutput, sd.data_type, sd.modifier);
@@ -27563,8 +27574,11 @@ find any keywords, variable, functions, libraries, directories and files in the 
                   options.cmd_test = this.data.cmd_test;
                   options.cmd_lint = this.data.cmd_lint;
                   options.cmd_format = this.data.cmd_format;
-                  options.max_tokens = modelInfo.maxInputTokens ?? 4096;
+                  if (!options.max_tokens) {
+                    options.max_tokens = modelInfo.maxInputTokens ?? 4096;
+                  }
                   let fn = hookfn.fn;
+                  console.log("fillInputVars", hookfn.name, param, options);
                   let data = await fn(param, options);
                   this.setData(v.name, data, v.dataType, v.modifier);
                 }
@@ -27782,6 +27796,10 @@ var panel = null;
 var session = null;
 var workspace = null;
 var task = null;
+var activeFile = null;
+var activeEditor = null;
+var activeSelectionText = null;
+var activeSelectionRange = null;
 var confirmHook = () => {
 };
 function activate(context) {
@@ -27795,6 +27813,22 @@ function activate(context) {
   context.subscriptions.push(
     vscode.commands.registerCommand("brain.start", () => {
       vscode.window.showInformationMessage("BRAIN Starting");
+      const editor = vscode.window.activeTextEditor;
+      if (editor) {
+        activeEditor = editor;
+        activeFile = editor.document?.uri?.fsPath ?? null;
+        const selection = editor.selection;
+        if (selection && !selection.isEmpty) {
+          const selectionRange = new vscode.Range(
+            selection.start.line,
+            selection.start.character,
+            selection.end.line,
+            selection.end.character
+          );
+          activeSelectionText = editor.document.getText(selectionRange);
+          activeSelectionRange = selectionRange;
+        }
+      }
       createWebView(context.extensionUri);
     })
   );
@@ -27853,6 +27887,9 @@ async function createWebView(extUri) {
     defaultModel: session.getModel()
   });
   sendMessage("templates", templates);
+  sendMessage("vscode-active-file", activeFile);
+  sendMessage("vscode-active-selection-text", activeSelectionText);
+  sendMessage("vscode-active-selection-range", activeSelectionRange);
 }
 function beforeTemplate(msg) {
   sendMessage("log", msg);
@@ -27873,9 +27910,21 @@ function humanReview(text, title) {
     sendMessage("human-review", { text, title });
   });
 }
+function performExternalEdit(text) {
+  console.log("performExternalEdit", text);
+  if (activeEditor) {
+    activeEditor.edit((edit) => {
+      edit.replace(activeSelectionRange, text);
+    });
+  }
+}
 async function startTask(template, data) {
+  data.vscode_active_file = activeFile;
+  data.vscode_active_text = activeSelectionText;
+  data.vscode_active_range = activeSelectionRange;
   task = new AiTask(workspace, template, data);
   task.requestHumanReview = humanReview;
+  task.performExternalEdit = performExternalEdit;
   task.start(beforeTemplate, afterTemplate);
 }
 function sendMessage(cmd, data) {

@@ -28,6 +28,7 @@ type AiTaskData = {
 }
 
 export type AiTaskHumanReviewFn = (text: string, context: string) => Promise<string>
+export type AiExternalEditFn = (text: string) => void
 export type AiTaskBeforeTemplateFn = (msg: string | null | undefined) => void
 export type AiTaskAfterTemplateFn = (msg: string | null | undefined) => void
 
@@ -41,6 +42,9 @@ export default class AiTask {
     hooks: HookPlugin[] = []
     requestHandlers: AIRequest[] = []
     requestHumanReview: AiTaskHumanReviewFn = async (text, _context) => {
+        return text
+    }
+    performExternalEdit: AiExternalEditFn = async (text) => {
         return text
     }
 
@@ -211,6 +215,11 @@ export default class AiTask {
             }
         }
 
+        // external edit
+        if (respConfig.external_edit) {
+            this.performExternalEdit(parsedOutput ?? rawOutput)
+        }
+
         // save data
         if (respConfig.save_data) {
             let sd = respConfig.save_data
@@ -236,10 +245,12 @@ export default class AiTask {
                             options.cmd_test = this.data.cmd_test
                             options.cmd_lint = this.data.cmd_lint
                             options.cmd_format = this.data.cmd_format
-                            options.max_tokens = modelInfo.maxInputTokens ?? 4096
+                            if (!options.max_tokens) {
+                                options.max_tokens = modelInfo.maxInputTokens ?? 4096
+                            }
 
                             let fn = hookfn.fn as InputHookFn
-                            // console.log("fillInputVars", hookfn.name, param, options)
+                            console.log("fillInputVars", hookfn.name, param, options)
                             let data = await fn(param, options)
                             // console.log("fillInputVars", hookfn.name, "data res", data)
                             // console.log(

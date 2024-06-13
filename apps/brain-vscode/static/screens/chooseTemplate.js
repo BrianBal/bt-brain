@@ -1,6 +1,7 @@
 import { templateButton, select, row, col, label } from "../ui.js"
 
-export const chooseTemplate = (templates, models, defaultModel, setData) => {
+export const chooseTemplate = (templates, activeFile, models, defaultModel, setData) => {
+    console.log("chooseTemplate", activeFile)
     const allModels = models ?? []
     let selectedModel = defaultModel
     const onModelSelected = (key) => {
@@ -18,6 +19,7 @@ export const chooseTemplate = (templates, models, defaultModel, setData) => {
 
     return col(
         label("h1", "BRAIN: Choose a template"),
+        label("p", "Active File: " + activeFile),
         row(
             { style: "margin-bottom: 30px" },
             col(

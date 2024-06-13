@@ -12,7 +12,7 @@ const writeSingleFile: ResponseHookFn = async (rawOutput, parsedOutput, param, o
     }
 
     let content = ""
-    if (typeof parsedOutput === "string") {
+    if (typeof parsedOutput === "string" && parsedOutput.length > 0) {
         content = parsedOutput
     } else {
         content = rawOutput ?? ""

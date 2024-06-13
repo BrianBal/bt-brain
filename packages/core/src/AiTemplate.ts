@@ -8,6 +8,7 @@ export type AiTemplateResponse = {
     write_to_file?: string
     options?: AiTemplateOptions
     save_data?: AiSaveData
+    external_edit: boolean
 }
 
 export type AiTemplateVar = {

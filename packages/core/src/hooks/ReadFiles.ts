@@ -14,7 +14,7 @@ const inputReadFile: InputHookFn = async (filePath, options = {}) => {
         fp = path.join(workspace, filePath)
     }
     fp = path.resolve(fp)
-
+    console.log("inputReadFile fp", fp)
     if (fp) {
         try {
             let fileStat = await stat(fp)
@@ -23,6 +23,7 @@ const inputReadFile: InputHookFn = async (filePath, options = {}) => {
                 contents = buffer.toString()
             }
         } catch (e) {
+            console.log("inputReadFile error", e)
             contents = ""
         }
     }

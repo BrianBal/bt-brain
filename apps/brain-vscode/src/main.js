@@ -6,6 +6,10 @@ let panel = null
 let session = null
 let workspace = null
 let task = null
+let activeFile = null
+let activeEditor = null
+let activeSelectionText = null
+let activeSelectionRange = null
 let confirmHook = () => {}
 
 function activate(context) {
@@ -22,6 +26,23 @@ function activate(context) {
     context.subscriptions.push(
         vscode.commands.registerCommand("brain.start", () => {
             vscode.window.showInformationMessage("BRAIN Starting")
+            // find the the active file, and selection
+            const editor = vscode.window.activeTextEditor
+            if (editor) {
+                activeEditor = editor
+                activeFile = editor.document?.uri?.fsPath ?? null
+                const selection = editor.selection
+                if (selection && !selection.isEmpty) {
+                    const selectionRange = new vscode.Range(
+                        selection.start.line,
+                        selection.start.character,
+                        selection.end.line,
+                        selection.end.character
+                    )
+                    activeSelectionText = editor.document.getText(selectionRange)
+                    activeSelectionRange = selectionRange
+                }
+            }
             createWebView(context.extensionUri)
         })
     )
@@ -87,6 +108,9 @@ async function createWebView(extUri) {
         defaultModel: session.getModel(),
     })
     sendMessage("templates", templates)
+    sendMessage("vscode-active-file", activeFile)
+    sendMessage("vscode-active-selection-text", activeSelectionText)
+    sendMessage("vscode-active-selection-range", activeSelectionRange)
 }
 
 function beforeTemplate(msg) {
@@ -111,9 +135,23 @@ function humanReview(text, title) {
     })
 }
 
+function performExternalEdit(text) {
+    console.log("performExternalEdit", text)
+    // replace active selection with text
+    if (activeEditor) {
+        activeEditor.edit((edit) => {
+            edit.replace(activeSelectionRange, text)
+        })
+    }
+}
+
 async function startTask(template, data) {
+    data.vscode_active_file = activeFile
+    data.vscode_active_text = activeSelectionText
+    data.vscode_active_range = activeSelectionRange
     task = new AiTask(workspace, template, data)
     task.requestHumanReview = humanReview
+    task.performExternalEdit = performExternalEdit
     task.start(beforeTemplate, afterTemplate)
 }
 
