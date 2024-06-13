@@ -1,4 +1,4 @@
-import { statSync } from "fs"
+import { existsSync } from "fs"
 import asyncExec, { ExecResult } from "../util/asyncExec"
 
 export default class Database {
@@ -12,8 +12,7 @@ export default class Database {
         if (this.databasePath === ":memory:") {
             return true
         }
-        let fileStat = statSync(this.databasePath)
-        return fileStat.isFile()
+        return existsSync(this.databasePath)
     }
 
     private buildCommand(query: string, args: any[]): string {

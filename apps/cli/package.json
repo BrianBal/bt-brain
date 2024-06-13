@@ -4,10 +4,11 @@
     "version": "0.0.0",
     "main": "dist/cli.js",
     "bin": {
-        "pathways": "dist/cli.js"
+        "brain": "./dist/cli.js"
     },
     "scripts": {
         "build": "tsc && esbuild ./src/cli.ts  --bundle --outfile=./dist/cli.js --format=cjs --platform=node",
+        "build:ne": "sed -i '1s/^/#/usr/bin/env node\n/' ./dist/cli.js",
         "start": "pnpm build && node ./dist/cli.js --workspace ../../"
     },
     "dependencies": {

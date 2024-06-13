@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { AiTask, Session, loadTemplates } from "core"
 import yargs from "yargs/yargs"
 import { hideBin } from "yargs/helpers"

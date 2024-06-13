@@ -3,18 +3,24 @@ import listFiles from "../util/listFiles"
 import * as path from "path"
 import getEmbedsDB from "../data/getEmbedsDB"
 import Session from "../Session"
+import * as fs from "fs"
 
 interface Embedding {
     id: string
     content_hash: string
+    update: number
 }
 
 export default async function createEmbeds(dir: string): Promise<boolean> {
+    console.time("createEmbeds")
+    console.time("createEmbed:Setup")
     const session = Session.get()
     const wdir = session.workspace ?? path.resolve(dir)
     const files = await listFiles(wdir)
-    console.log("🟢 createEmbeds", wdir)
+    console.timeLog("createEmbed:Setup")
+    console.log("   creating embeds in", wdir)
 
+    console.time("createEmbed:GetEmbeds")
     let embeds: Embedding[] = []
     const embedsDB = await getEmbedsDB()
     try {
@@ -22,32 +28,47 @@ export default async function createEmbeds(dir: string): Promise<boolean> {
             const sql = "select * from collections where name = ?"
             const collection = await embedsDB.get(sql, ["code"])
             const sql2 =
-                "select id, HEX(content_hash) as content_hash from embeddings where collection_id = ?"
+                "select id, HEX(content_hash) as content_hash, updated from embeddings where collection_id = ?"
             embeds = await embedsDB.all(sql2, [collection.id])
         }
     } catch (e) {
         // error caught nothing else to do
         console.log("error", e)
     }
+    console.timeLog("createEmbed:GetEmbeds")
 
+    console.time("createEmbed:Files")
     for (const file of files) {
         const id = file.replace(`${wdir}/`, "")
+        let changed = false
+        let fileStat = fs.statSync(file)
         const embed = embeds.find((e) => e.id === id)
-        let hash: string | null = null
-        let embedHash = ""
-        if (embed) {
-            hash = await fileHash(file)
-            embedHash = embed.content_hash
+        if (!embed) {
+            changed = true
+        } else if (embed.update < fileStat.mtime.getTime()) {
+            let hash: string | null = null
+            let embedHash = ""
+            if (embed) {
+                hash = await fileHash(file)
+                embedHash = embed.content_hash
+                changed = embedHash !== hash
+            }
         }
-        if (embedHash !== hash) {
-            console.log(`🟠 ${id}`)
+
+        if (changed) {
+            console.log(`   🟠 ${id}`)
             let cmd = `llm embed -i "${file}" --store -d ${session.embedsDatabaseFile} code "${id}"`
-            await asyncExec(cmd)
+            let out = await asyncExec(cmd)
+            if (out.stderr) {
+                console.log("embed ERR", out.stderr)
+            }
         } else {
-            console.log(`🟢 ${id}`)
+            console.log(`   🟢 ${id}`)
         }
     }
+    console.timeLog("createEmbed:Files")
 
+    console.timeLog("createEmbeds")
     return true
 }
 
