@@ -49,7 +49,13 @@ export default async function runGenerate(
 
     let msg: AIChatMessage | null = null
     if (!template.testresult) {
-        msg = await makeRequest(input, system, task.model, task.getChatMessages())
+        msg = await makeRequest(
+            input,
+            system,
+            task.model,
+            task.getChatMessages(),
+            task.onProgressUpdate
+        )
     } else {
         msg = {
             role: "assistant",

@@ -13,3 +13,11 @@ export type AIRequest = (
     model: AIModelInfo,
     history: AIChatMessage[]
 ) => Promise<AIChatMessage | null>
+
+export type AIStreamingRequest = (
+    prompt: string,
+    system: string,
+    model: AIModelInfo,
+    history: AIChatMessage[],
+    progress: (text: string) => void
+) => Promise<AIChatMessage | null>

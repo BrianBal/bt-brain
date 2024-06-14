@@ -47,6 +47,9 @@ export default class AiTask {
     performExternalEdit: AiExternalEditFn = async (text) => {
         return text
     }
+    onProgressUpdate: AiExternalEditFn = async (text) => {
+        return text
+    }
 
     static async allTemplates(): Promise<AiTemplate[]> {
         return await loadTemplates()
@@ -236,7 +239,6 @@ export default class AiTask {
                 for (let hook of this.hooks) {
                     for (let hookfn of hook.funcs) {
                         if (hookfn.type === "input" && hookfn.name === v.type) {
-                            // console.log("fillInputVars hook", hookfn.name)
                             let param = v.param ? this.getData(v.param) ?? v.param : null
                             let options = v.options ?? {}
                             options.workspace = this.workspace
@@ -250,18 +252,7 @@ export default class AiTask {
                             }
 
                             let fn = hookfn.fn as InputHookFn
-                            console.log("fillInputVars", hookfn.name, param, options)
                             let data = await fn(param, options)
-                            // console.log("fillInputVars", hookfn.name, "data res", data)
-                            // console.log(
-                            //     "fillInputVars",
-                            //     hookfn.name,
-                            //     "setting",
-                            //     v.name,
-                            //     data,
-                            //     v.dataType,
-                            //     v.modifier
-                            // )
                             this.setData(v.name, data, v.dataType, v.modifier)
                         }
                     }

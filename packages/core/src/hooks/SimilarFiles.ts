@@ -17,7 +17,8 @@ const similarFiles: InputHookFn = async (content, options = {}) => {
             prompt,
             "You are a helpful assistant",
             "defaultSmallModel",
-            []
+            [],
+            (_text: string) => {}
         )
     }
 

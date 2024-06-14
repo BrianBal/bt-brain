@@ -1,5 +1,5 @@
 import https from "https"
-import { AIRequest } from "./AIRequest"
+import { AIStreamingRequest } from "./AIRequest"
 
 type GroqChatMessage = {
     role: string
@@ -15,7 +15,13 @@ type GroqChatMessage = {
  * @param {Array} examples - An array of example messages to include in the request.
  * @return {Promise<string>} A promise that resolves to the generated response from the Groq API.
  */
-const groqRequest: AIRequest = async (prompt, system, modelInfo, examples = []) => {
+const groqRequest: AIStreamingRequest = async (
+    prompt,
+    system,
+    modelInfo,
+    examples = [],
+    progress
+) => {
     let apiKey = modelInfo.apiKey
     let messages: GroqChatMessage[] = examples.map((m) => ({ role: m.role, content: m.text }))
     if (system) {
@@ -40,7 +46,6 @@ const groqRequest: AIRequest = async (prompt, system, modelInfo, examples = []) 
         headers: {
             Authorization: `Bearer ${apiKey}`,
             "Content-Type": "application/json",
-            "Content-Length": postData.length,
         },
     }
 
@@ -55,6 +60,7 @@ const groqRequest: AIRequest = async (prompt, system, modelInfo, examples = []) 
             res.on("end", () => {
                 const jsonData: any = JSON.parse(data)
                 if (jsonData?.choices) {
+                    progress(jsonData.choices[0].message.content)
                     resolve({
                         role: jsonData.choices[0].message.role,
                         text: jsonData.choices[0].message.content,

@@ -1,4 +1,4 @@
-import { AIRequest } from "./AIRequest"
+import type { AIStreamingRequest } from "./AIRequest"
 import http from "http"
 
 /**
@@ -8,14 +8,20 @@ import http from "http"
  * @param {string} systemMessage - The system message to include in the request.
  * @param {object} modelInfo - The model information to use for the request.
  * @param {Array} examples - An array of example messages to include in the request. { role, text }
+ * @param {function} examples - progress update handler
  * @return {Promise<string>} A promise that resolves to the generated response from the Ollama API.
  */
-const ollamaRequest: AIRequest = async (userPrompt, systemMessage, modelInfo, history = []) => {
+const streamOllamaRequest: AIStreamingRequest = async (
+    userPrompt,
+    systemMessage,
+    modelInfo,
+    history = [],
+    progress
+) => {
     let messages = history.map((m) => ({ role: m.role, content: m.text }))
     if (systemMessage) {
         messages.splice(0, 0, { role: "system", content: systemMessage })
     }
-    let start = Date.now()
     messages.push({ role: "user", content: userPrompt })
 
     const options = {
@@ -29,28 +35,31 @@ const ollamaRequest: AIRequest = async (userPrompt, systemMessage, modelInfo, hi
     }
 
     return new Promise((resolve, reject) => {
+        let responseText = ""
         const req = http.request(options, (res) => {
-            let data = ""
-            res.on("data", (chunk) => {
-                data += chunk
+            res.on("data", (chunk: ArrayBuffer) => {
+                const data = chunk.toString()
+                const lines = data.split("\n")
+
+                for (const line of lines) {
+                    if (line.trim()) {
+                        try {
+                            const result = JSON.parse(line)
+                            let content = result.message?.content ?? ""
+                            responseText += content
+                            progress(responseText)
+
+                            if (result.done) {
+                                resolve({ text: responseText, role: "assistant" })
+                            }
+                        } catch (e) {
+                            console.log(e)
+                        }
+                    }
+                }
             })
             res.on("end", () => {
-                let end = Date.now()
-                console.log("Ollama request took", (end - start) / 1000, "seconds")
-                console.log(data)
-                try {
-                    const parsedData = JSON.parse(data)
-                    if (parsedData?.message) {
-                        resolve({
-                            role: parsedData.message.role,
-                            text: parsedData.message.content,
-                        })
-                    } else {
-                        resolve(null)
-                    }
-                } catch (error) {
-                    reject(error)
-                }
+                resolve({ text: responseText, role: "assistant" })
             })
         })
 
@@ -62,7 +71,7 @@ const ollamaRequest: AIRequest = async (userPrompt, systemMessage, modelInfo, hi
             JSON.stringify({
                 model: modelInfo.model,
                 messages: messages,
-                stream: false,
+                stream: true,
                 keep_alive: "2m",
             })
         )
@@ -70,4 +79,4 @@ const ollamaRequest: AIRequest = async (userPrompt, systemMessage, modelInfo, hi
     })
 }
 
-export default ollamaRequest
+export default streamOllamaRequest

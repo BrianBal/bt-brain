@@ -6598,14 +6598,14 @@ ${end.comment}` : end.comment;
                 case "scalar":
                 case "single-quoted-scalar":
                 case "double-quoted-scalar": {
-                  const fs6 = this.flowScalar(this.type);
+                  const fs7 = this.flowScalar(this.type);
                   if (atNextItem || it.value) {
-                    map.items.push({ start, key: fs6, sep: [] });
+                    map.items.push({ start, key: fs7, sep: [] });
                     this.onKeyLine = true;
                   } else if (it.sep) {
-                    this.stack.push(fs6);
+                    this.stack.push(fs7);
                   } else {
-                    Object.assign(it, { key: fs6, sep: [] });
+                    Object.assign(it, { key: fs7, sep: [] });
                     this.onKeyLine = true;
                   }
                   return;
@@ -6723,13 +6723,13 @@ ${end.comment}` : end.comment;
                 case "scalar":
                 case "single-quoted-scalar":
                 case "double-quoted-scalar": {
-                  const fs6 = this.flowScalar(this.type);
+                  const fs7 = this.flowScalar(this.type);
                   if (!it || it.value)
-                    fc.items.push({ start: [], key: fs6, sep: [] });
+                    fc.items.push({ start: [], key: fs7, sep: [] });
                   else if (it.sep)
-                    this.stack.push(fs6);
+                    this.stack.push(fs7);
                   else
-                    Object.assign(it, { key: fs6, sep: [] });
+                    Object.assign(it, { key: fs7, sep: [] });
                   return;
                 }
                 case "flow-map-end":
@@ -12539,7 +12539,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_lib3 = __commonJS2({
-      "../../node_modules/.pnpm/node-fetch@2.7.0/node_modules/node-fetch/lib/index.js"(exports22, module22) {
+      "../../node_modules/.pnpm/node-fetch@2.7.0_encoding@0.1.13/node_modules/node-fetch/lib/index.js"(exports22, module22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         function _interopDefault(ex) {
@@ -13795,7 +13795,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_package = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/package.json"(exports22, module22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/package.json"(exports22, module22) {
         module22.exports = {
           name: "gaxios",
           version: "6.6.0",
@@ -13894,7 +13894,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_util = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/util.js"(exports22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/util.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.pkg = void 0;
@@ -13902,7 +13902,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_common = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/common.js"(exports22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/common.js"(exports22) {
         "use strict";
         var __importDefault = exports22 && exports22.__importDefault || function(mod) {
           return mod && mod.__esModule ? mod : { "default": mod };
@@ -14039,7 +14039,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_retry = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/retry.js"(exports22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/retry.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.getRetryConfig = void 0;
@@ -14469,7 +14469,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_interceptor = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/interceptor.js"(exports22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/interceptor.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GaxiosInterceptorManager = void 0;
@@ -14921,37 +14921,31 @@ ${end.comment}` : end.comment;
       }
     });
     var require_has_flag = __commonJS2({
-      "../../node_modules/.pnpm/has-flag@4.0.0/node_modules/has-flag/index.js"(exports22, module22) {
+      "../../node_modules/.pnpm/has-flag@3.0.0/node_modules/has-flag/index.js"(exports22, module22) {
         "use strict";
-        module22.exports = (flag, argv = process.argv) => {
+        module22.exports = (flag, argv) => {
+          argv = argv || process.argv;
           const prefix = flag.startsWith("-") ? "" : flag.length === 1 ? "-" : "--";
-          const position = argv.indexOf(prefix + flag);
-          const terminatorPosition = argv.indexOf("--");
-          return position !== -1 && (terminatorPosition === -1 || position < terminatorPosition);
+          const pos = argv.indexOf(prefix + flag);
+          const terminatorPos = argv.indexOf("--");
+          return pos !== -1 && (terminatorPos === -1 ? true : pos < terminatorPos);
         };
       }
     });
     var require_supports_color = __commonJS2({
-      "../../node_modules/.pnpm/supports-color@7.2.0/node_modules/supports-color/index.js"(exports22, module22) {
+      "../../node_modules/.pnpm/supports-color@5.5.0/node_modules/supports-color/index.js"(exports22, module22) {
         "use strict";
         var os = require("os");
-        var tty = require("tty");
         var hasFlag = require_has_flag();
-        var { env } = process;
+        var env = process.env;
         var forceColor;
-        if (hasFlag("no-color") || hasFlag("no-colors") || hasFlag("color=false") || hasFlag("color=never")) {
-          forceColor = 0;
+        if (hasFlag("no-color") || hasFlag("no-colors") || hasFlag("color=false")) {
+          forceColor = false;
         } else if (hasFlag("color") || hasFlag("colors") || hasFlag("color=true") || hasFlag("color=always")) {
-          forceColor = 1;
+          forceColor = true;
         }
         if ("FORCE_COLOR" in env) {
-          if (env.FORCE_COLOR === "true") {
-            forceColor = 1;
-          } else if (env.FORCE_COLOR === "false") {
-            forceColor = 0;
-          } else {
-            forceColor = env.FORCE_COLOR.length === 0 ? 1 : Math.min(parseInt(env.FORCE_COLOR, 10), 3);
-          }
+          forceColor = env.FORCE_COLOR.length === 0 || parseInt(env.FORCE_COLOR, 10) !== 0;
         }
         function translateLevel(level) {
           if (level === 0) {
@@ -14964,8 +14958,8 @@ ${end.comment}` : end.comment;
             has16m: level >= 3
           };
         }
-        function supportsColor(haveStream, streamIsTTY) {
-          if (forceColor === 0) {
+        function supportsColor(stream) {
+          if (forceColor === false) {
             return 0;
           }
           if (hasFlag("color=16m") || hasFlag("color=full") || hasFlag("color=truecolor")) {
@@ -14974,22 +14968,19 @@ ${end.comment}` : end.comment;
           if (hasFlag("color=256")) {
             return 2;
           }
-          if (haveStream && !streamIsTTY && forceColor === void 0) {
+          if (stream && !stream.isTTY && forceColor !== true) {
             return 0;
           }
-          const min = forceColor || 0;
-          if (env.TERM === "dumb") {
-            return min;
-          }
+          const min = forceColor ? 1 : 0;
           if (process.platform === "win32") {
             const osRelease = os.release().split(".");
-            if (Number(osRelease[0]) >= 10 && Number(osRelease[2]) >= 10586) {
+            if (Number(process.versions.node.split(".")[0]) >= 8 && Number(osRelease[0]) >= 10 && Number(osRelease[2]) >= 10586) {
               return Number(osRelease[2]) >= 14931 ? 3 : 2;
             }
             return 1;
           }
           if ("CI" in env) {
-            if (["TRAVIS", "CIRCLECI", "APPVEYOR", "GITLAB_CI", "GITHUB_ACTIONS", "BUILDKITE"].some((sign) => sign in env) || env.CI_NAME === "codeship") {
+            if (["TRAVIS", "CIRCLECI", "APPVEYOR", "GITLAB_CI"].some((sign) => sign in env) || env.CI_NAME === "codeship") {
               return 1;
             }
             return min;
@@ -15018,16 +15009,19 @@ ${end.comment}` : end.comment;
           if ("COLORTERM" in env) {
             return 1;
           }
+          if (env.TERM === "dumb") {
+            return min;
+          }
           return min;
         }
         function getSupportLevel(stream) {
-          const level = supportsColor(stream, stream && stream.isTTY);
+          const level = supportsColor(stream);
           return translateLevel(level);
         }
         module22.exports = {
           supportsColor: getSupportLevel,
-          stdout: translateLevel(supportsColor(true, tty.isatty(1))),
-          stderr: translateLevel(supportsColor(true, tty.isatty(2)))
+          stdout: getSupportLevel(process.stdout),
+          stderr: getSupportLevel(process.stderr)
         };
       }
     });
@@ -15687,7 +15681,7 @@ ${end.comment}` : end.comment;
       }
     });
     var require_gaxios = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/gaxios.js"(exports22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/gaxios.js"(exports22) {
         "use strict";
         var __createBinding = exports22 && exports22.__createBinding || (Object.create ? function(o, m, k, k2) {
           if (k2 === void 0)
@@ -16120,7 +16114,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_src2 = __commonJS2({
-      "../../node_modules/.pnpm/gaxios@6.6.0/node_modules/gaxios/build/src/index.js"(exports22) {
+      "../../node_modules/.pnpm/gaxios@6.6.0_encoding@0.1.13/node_modules/gaxios/build/src/index.js"(exports22) {
         "use strict";
         var __createBinding = exports22 && exports22.__createBinding || (Object.create ? function(o, m, k, k2) {
           if (k2 === void 0)
@@ -18044,7 +18038,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_gcp_residency = __commonJS2({
-      "../../node_modules/.pnpm/gcp-metadata@6.1.0/node_modules/gcp-metadata/build/src/gcp-residency.js"(exports22) {
+      "../../node_modules/.pnpm/gcp-metadata@6.1.0_encoding@0.1.13/node_modules/gcp-metadata/build/src/gcp-residency.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.detectGCPResidency = exports22.isGoogleComputeEngine = exports22.isGoogleComputeEngineMACAddress = exports22.isGoogleComputeEngineLinux = exports22.isGoogleCloudServerless = exports22.GCE_LINUX_BIOS_PATHS = void 0;
@@ -18097,7 +18091,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_src3 = __commonJS2({
-      "../../node_modules/.pnpm/gcp-metadata@6.1.0/node_modules/gcp-metadata/build/src/index.js"(exports22) {
+      "../../node_modules/.pnpm/gcp-metadata@6.1.0_encoding@0.1.13/node_modules/gcp-metadata/build/src/index.js"(exports22) {
         "use strict";
         var __createBinding = exports22 && exports22.__createBinding || (Object.create ? function(o, m, k, k2) {
           if (k2 === void 0)
@@ -18456,7 +18450,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_crypto = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/crypto/browser/crypto.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/crypto/browser/crypto.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.BrowserCrypto = void 0;
@@ -18550,7 +18544,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_crypto2 = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/crypto/node/crypto.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/crypto/node/crypto.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.NodeCrypto = void 0;
@@ -18612,7 +18606,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_crypto3 = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/crypto/crypto.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/crypto/crypto.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.fromArrayBufferToHex = exports22.hasBrowserCrypto = exports22.createCrypto = void 0;
@@ -18639,7 +18633,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_options = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/options.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/options.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.validate = void 0;
@@ -18660,7 +18654,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_package2 = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/package.json"(exports22, module22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/package.json"(exports22, module22) {
         module22.exports = {
           name: "google-auth-library",
           version: "9.10.0",
@@ -18754,7 +18748,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_transporters = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/transporters.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/transporters.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.DefaultTransporter = void 0;
@@ -19053,7 +19047,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_util2 = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/util.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/util.js"(exports22) {
         "use strict";
         var __classPrivateFieldGet = exports22 && exports22.__classPrivateFieldGet || function(receiver, state, kind, f) {
           if (kind === "a" && !f)
@@ -19131,7 +19125,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_authclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/authclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/authclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.AuthClient = exports22.DEFAULT_EAGER_REFRESH_THRESHOLD_MILLIS = exports22.DEFAULT_UNIVERSE = void 0;
@@ -19221,7 +19215,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_loginticket = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/loginticket.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/loginticket.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.LoginTicket = void 0;
@@ -19269,7 +19263,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_oauth2client = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/oauth2client.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/oauth2client.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.OAuth2Client = exports22.CertificateFormat = exports22.CodeChallengeMethod = void 0;
@@ -19903,7 +19897,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_computeclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/computeclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/computeclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.Compute = void 0;
@@ -19991,7 +19985,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_idtokenclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/idtokenclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/idtokenclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.IdTokenClient = void 0;
@@ -20033,7 +20027,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_envDetect = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/envDetect.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/envDetect.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.getEnv = exports22.clear = exports22.GCPEnv = void 0;
@@ -20610,7 +20604,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_src4 = __commonJS2({
-      "../../node_modules/.pnpm/gtoken@7.1.0/node_modules/gtoken/build/src/index.js"(exports22) {
+      "../../node_modules/.pnpm/gtoken@7.1.0_encoding@0.1.13/node_modules/gtoken/build/src/index.js"(exports22) {
         "use strict";
         var __classPrivateFieldGet = exports22 && exports22.__classPrivateFieldGet || function(receiver, state, kind, f) {
           if (kind === "a" && !f)
@@ -20638,12 +20632,12 @@ Content-Type: ${partContentType}\r
         var _GoogleToken_requestToken;
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GoogleToken = void 0;
-        var fs6 = require("fs");
+        var fs7 = require("fs");
         var gaxios_1 = require_src2();
         var jws = require_jws();
         var path8 = require("path");
         var util_1 = require("util");
-        var readFile3 = fs6.readFile ? (0, util_1.promisify)(fs6.readFile) : async () => {
+        var readFile3 = fs7.readFile ? (0, util_1.promisify)(fs7.readFile) : async () => {
           throw new ErrorWithCode("use key rather than keyFile.", "MISSING_CREDENTIALS");
         };
         var GOOGLE_TOKEN_URL = "https://www.googleapis.com/oauth2/v4/token";
@@ -20877,7 +20871,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_jwtaccess = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/jwtaccess.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/jwtaccess.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.JWTAccess = void 0;
@@ -21040,7 +21034,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_jwtclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/jwtclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/jwtclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.JWT = void 0;
@@ -21286,7 +21280,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_refreshclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/refreshclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/refreshclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.UserRefreshClient = exports22.USER_REFRESH_ACCOUNT_TYPE = void 0;
@@ -21389,7 +21383,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_impersonated = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/impersonated.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/impersonated.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.Impersonated = exports22.IMPERSONATED_ACCOUNT_TYPE = void 0;
@@ -21547,7 +21541,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_oauth2common = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/oauth2common.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/oauth2common.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.getErrorFromOAuthErrorResponse = exports22.OAuthClientAuthHandler = void 0;
@@ -21698,7 +21692,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_stscredentials = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/stscredentials.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/stscredentials.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.StsCredentials = void 0;
@@ -21785,7 +21779,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_baseexternalclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/baseexternalclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/baseexternalclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.BaseExternalAccountClient = exports22.DEFAULT_UNIVERSE = exports22.CLOUD_RESOURCE_MANAGER = exports22.EXTERNAL_ACCOUNT_TYPE = exports22.EXPIRATION_TIME_OFFSET = void 0;
@@ -22129,7 +22123,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_filesubjecttokensupplier = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/filesubjecttokensupplier.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/filesubjecttokensupplier.js"(exports22) {
         "use strict";
         var _a;
         var _b;
@@ -22137,12 +22131,12 @@ Content-Type: ${partContentType}\r
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.FileSubjectTokenSupplier = void 0;
         var util_1 = require("util");
-        var fs6 = require("fs");
-        var readFile3 = (0, util_1.promisify)((_a = fs6.readFile) !== null && _a !== void 0 ? _a : () => {
+        var fs7 = require("fs");
+        var readFile3 = (0, util_1.promisify)((_a = fs7.readFile) !== null && _a !== void 0 ? _a : () => {
         });
-        var realpath = (0, util_1.promisify)((_b = fs6.realpath) !== null && _b !== void 0 ? _b : () => {
+        var realpath = (0, util_1.promisify)((_b = fs7.realpath) !== null && _b !== void 0 ? _b : () => {
         });
-        var lstat = (0, util_1.promisify)((_c = fs6.lstat) !== null && _c !== void 0 ? _c : () => {
+        var lstat = (0, util_1.promisify)((_c = fs7.lstat) !== null && _c !== void 0 ? _c : () => {
         });
         var FileSubjectTokenSupplier = class {
           /**
@@ -22192,7 +22186,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_urlsubjecttokensupplier = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/urlsubjecttokensupplier.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/urlsubjecttokensupplier.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.UrlSubjectTokenSupplier = void 0;
@@ -22241,7 +22235,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_identitypoolclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/identitypoolclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/identitypoolclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.IdentityPoolClient = void 0;
@@ -22329,7 +22323,7 @@ Content-Type: ${partContentType}\r
       }
     });
     var require_awsrequestsigner = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/awsrequestsigner.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/awsrequestsigner.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.AwsRequestSigner = void 0;
@@ -22472,7 +22466,7 @@ ${credentialScope}
       }
     });
     var require_defaultawssecuritycredentialssupplier = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/defaultawssecuritycredentialssupplier.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/defaultawssecuritycredentialssupplier.js"(exports22) {
         "use strict";
         var __classPrivateFieldGet = exports22 && exports22.__classPrivateFieldGet || function(receiver, state, kind, f) {
           if (kind === "a" && !f)
@@ -22625,7 +22619,7 @@ ${credentialScope}
       }
     });
     var require_awsclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/awsclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/awsclient.js"(exports22) {
         "use strict";
         var __classPrivateFieldGet = exports22 && exports22.__classPrivateFieldGet || function(receiver, state, kind, f) {
           if (kind === "a" && !f)
@@ -22745,7 +22739,7 @@ ${credentialScope}
       }
     });
     var require_executable_response = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/executable-response.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/executable-response.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.InvalidSubjectTokenError = exports22.InvalidMessageFieldError = exports22.InvalidCodeFieldError = exports22.InvalidTokenTypeFieldError = exports22.InvalidExpirationTimeFieldError = exports22.InvalidSuccessFieldError = exports22.InvalidVersionFieldError = exports22.ExecutableResponseError = exports22.ExecutableResponse = void 0;
@@ -22843,14 +22837,14 @@ ${credentialScope}
       }
     });
     var require_pluggable_auth_handler = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/pluggable-auth-handler.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/pluggable-auth-handler.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.PluggableAuthHandler = void 0;
         var pluggable_auth_client_1 = require_pluggable_auth_client();
         var executable_response_1 = require_executable_response();
         var childProcess = require("child_process");
-        var fs6 = require("fs");
+        var fs7 = require("fs");
         var PluggableAuthHandler = class _PluggableAuthHandler {
           /**
            * Instantiates a PluggableAuthHandler instance using the provided
@@ -22920,14 +22914,14 @@ ${credentialScope}
             }
             let filePath;
             try {
-              filePath = await fs6.promises.realpath(this.outputFile);
+              filePath = await fs7.promises.realpath(this.outputFile);
             } catch (_a) {
               return void 0;
             }
-            if (!(await fs6.promises.lstat(filePath)).isFile()) {
+            if (!(await fs7.promises.lstat(filePath)).isFile()) {
               return void 0;
             }
-            const responseString = await fs6.promises.readFile(filePath, {
+            const responseString = await fs7.promises.readFile(filePath, {
               encoding: "utf8"
             });
             if (responseString === "") {
@@ -22968,7 +22962,7 @@ ${credentialScope}
       }
     });
     var require_pluggable_auth_client = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/pluggable-auth-client.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/pluggable-auth-client.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.PluggableAuthClient = exports22.ExecutableError = void 0;
@@ -23084,7 +23078,7 @@ ${credentialScope}
       }
     });
     var require_externalclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/externalclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/externalclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.ExternalAccountClient = void 0;
@@ -23128,7 +23122,7 @@ ${credentialScope}
       }
     });
     var require_externalAccountAuthorizedUserClient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/externalAccountAuthorizedUserClient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/externalAccountAuthorizedUserClient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.ExternalAccountAuthorizedUserClient = exports22.EXTERNAL_ACCOUNT_AUTHORIZED_USER_TYPE = void 0;
@@ -23320,12 +23314,12 @@ ${credentialScope}
       }
     });
     var require_googleauth = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/googleauth.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/googleauth.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GoogleAuth = exports22.CLOUD_SDK_CLIENT_ID = void 0;
         var child_process_1 = require("child_process");
-        var fs6 = require("fs");
+        var fs7 = require("fs");
         var gcpMetadata = require_src3();
         var os = require("os");
         var path8 = require("path");
@@ -23599,7 +23593,7 @@ ${credentialScope}
             }
             if (location) {
               location = path8.join(location, "gcloud", "application_default_credentials.json");
-              if (!fs6.existsSync(location)) {
+              if (!fs7.existsSync(location)) {
                 location = null;
               }
             }
@@ -23620,8 +23614,8 @@ ${credentialScope}
               throw new Error("The file path is invalid.");
             }
             try {
-              filePath = fs6.realpathSync(filePath);
-              if (!fs6.lstatSync(filePath).isFile()) {
+              filePath = fs7.realpathSync(filePath);
+              if (!fs7.lstatSync(filePath).isFile()) {
                 throw new Error();
               }
             } catch (err) {
@@ -23630,7 +23624,7 @@ ${credentialScope}
               }
               throw err;
             }
-            const readStream = fs6.createReadStream(filePath);
+            const readStream = fs7.createReadStream(filePath);
             return this.fromStream(readStream, options);
           }
           /**
@@ -23896,7 +23890,7 @@ ${credentialScope}
                 this._cacheClientFromJSON(this.jsonContent, this.clientOptions);
               } else if (this.keyFilename) {
                 const filePath = path8.resolve(this.keyFilename);
-                const stream = fs6.createReadStream(filePath);
+                const stream = fs7.createReadStream(filePath);
                 await this.fromStreamAsync(stream, this.clientOptions);
               } else {
                 await this.getApplicationDefaultAsync(this.clientOptions);
@@ -24012,7 +24006,7 @@ ${credentialScope}
       }
     });
     var require_iam = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/iam.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/iam.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.IAMAuth = void 0;
@@ -24044,7 +24038,7 @@ ${credentialScope}
       }
     });
     var require_downscopedclient = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/downscopedclient.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/downscopedclient.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.DownscopedClient = exports22.EXPIRATION_TIME_OFFSET = exports22.MAX_ACCESS_BOUNDARY_RULES_COUNT = void 0;
@@ -24226,7 +24220,7 @@ ${credentialScope}
       }
     });
     var require_passthrough = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/auth/passthrough.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/auth/passthrough.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.PassThroughClient = void 0;
@@ -24271,7 +24265,7 @@ ${credentialScope}
       }
     });
     var require_src5 = __commonJS2({
-      "../../node_modules/.pnpm/google-auth-library@9.10.0/node_modules/google-auth-library/build/src/index.js"(exports22) {
+      "../../node_modules/.pnpm/google-auth-library@9.10.0_encoding@0.1.13/node_modules/google-auth-library/build/src/index.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GoogleAuth = exports22.auth = exports22.DefaultTransporter = exports22.PassThroughClient = exports22.PluggableAuthClient = exports22.DownscopedClient = exports22.BaseExternalAccountClient = exports22.ExternalAccountClient = exports22.IdentityPoolClient = exports22.AwsClient = exports22.UserRefreshClient = exports22.LoginTicket = exports22.OAuth2Client = exports22.CodeChallengeMethod = exports22.Impersonated = exports22.JWT = exports22.JWTAccess = exports22.IdTokenClient = exports22.IAMAuth = exports22.GCPEnv = exports22.Compute = exports22.DEFAULT_UNIVERSE = exports22.AuthClient = exports22.gaxios = exports22.gcpMetadata = void 0;
@@ -24368,7 +24362,7 @@ ${credentialScope}
       }
     });
     var require_errors2 = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/errors.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/errors.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GoogleGenerativeAIError = exports22.GoogleAuthError = exports22.ClientError = void 0;
@@ -24408,7 +24402,7 @@ ${credentialScope}
       }
     });
     var require_constants = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/util/constants.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/util/constants.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.CREDENTIAL_ERROR_MESSAGE = exports22.USER_AGENT = exports22.SYSTEM_ROLE = exports22.MODEL_ROLE = exports22.USER_ROLE = exports22.STREAMING_GENERATE_CONTENT_METHOD = exports22.GENERATE_CONTENT_METHOD = void 0;
@@ -24425,7 +24419,7 @@ ${credentialScope}
       }
     });
     var require_util3 = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/util/index.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/util/index.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.constants = void 0;
@@ -24433,7 +24427,7 @@ ${credentialScope}
       }
     });
     var require_post_fetch_processing = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/post_fetch_processing.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/post_fetch_processing.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.processCountTokenResponse = exports22.processUnary = exports22.aggregateResponses = exports22.processStream = exports22.throwErrorIfNotOK = void 0;
@@ -24670,7 +24664,7 @@ ${credentialScope}
       }
     });
     var require_post_request = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/post_request.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/post_request.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.postRequest = void 0;
@@ -24763,7 +24757,7 @@ ${credentialScope}
       }
     });
     var require_pre_fetch_processing = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/pre_fetch_processing.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/pre_fetch_processing.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.validateGenerationConfig = exports22.validateGenerateContentRequest = exports22.formatContentRequest = void 0;
@@ -24806,7 +24800,7 @@ ${credentialScope}
       }
     });
     var require_generate_content = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/generate_content.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/generate_content.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.generateContentStream = exports22.generateContent = void 0;
@@ -24882,7 +24876,7 @@ ${credentialScope}
       }
     });
     var require_chat_session = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/models/chat_session.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/models/chat_session.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.ChatSessionPreview = exports22.ChatSession = void 0;
@@ -25183,7 +25177,7 @@ ${credentialScope}
       }
     });
     var require_count_tokens = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/functions/count_tokens.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/functions/count_tokens.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.countTokens = void 0;
@@ -25212,7 +25206,7 @@ ${credentialScope}
       }
     });
     var require_generative_models = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/models/generative_models.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/models/generative_models.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GenerativeModelPreview = exports22.GenerativeModel = void 0;
@@ -25550,7 +25544,7 @@ ${credentialScope}
       }
     });
     var require_models = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/models/index.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/models/index.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GenerativeModelPreview = exports22.GenerativeModel = exports22.ChatSessionPreview = exports22.ChatSession = void 0;
@@ -25571,7 +25565,7 @@ ${credentialScope}
       }
     });
     var require_vertex_ai = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/vertex_ai.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/vertex_ai.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.VertexAI = void 0;
@@ -25723,7 +25717,7 @@ ${credentialScope}
       }
     });
     var require_content = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/content.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/content.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.FunctionDeclarationSchemaType = exports22.FinishReason = exports22.BlockedReason = exports22.HarmSeverity = exports22.HarmProbability = exports22.HarmBlockThreshold = exports22.HarmCategory = void 0;
@@ -25791,7 +25785,7 @@ ${credentialScope}
       }
     });
     var require_generate_content_response_handler = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/generate_content_response_handler.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/generate_content_response_handler.js"(exports22) {
         "use strict";
         Object.defineProperty(exports22, "__esModule", { value: true });
         exports22.GenerateContentResponseHandler = void 0;
@@ -25812,7 +25806,7 @@ ${credentialScope}
       }
     });
     var require_types = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/types/index.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/types/index.js"(exports22) {
         "use strict";
         var __createBinding = exports22 && exports22.__createBinding || (Object.create ? function(o, m, k, k2) {
           if (k2 === void 0)
@@ -25845,7 +25839,7 @@ ${credentialScope}
       }
     });
     var require_src6 = __commonJS2({
-      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0/node_modules/@google-cloud/vertexai/build/src/index.js"(exports22) {
+      "../../node_modules/.pnpm/@google-cloud+vertexai@1.1.0_encoding@0.1.13/node_modules/@google-cloud/vertexai/build/src/index.js"(exports22) {
         "use strict";
         var __createBinding = exports22 && exports22.__createBinding || (Object.create ? function(o, m, k, k2) {
           if (k2 === void 0)
@@ -26378,62 +26372,6 @@ ${credentialScope}
       return null;
     };
     var google_default = googleRequest;
-    var import_http = __toESM(require("http"));
-    var ollamaRequest = async (userPrompt, systemMessage, modelInfo, history = []) => {
-      let messages = history.map((m) => ({ role: m.role, content: m.text }));
-      if (systemMessage) {
-        messages.splice(0, 0, { role: "system", content: systemMessage });
-      }
-      let start = Date.now();
-      messages.push({ role: "user", content: userPrompt });
-      const options = {
-        hostname: "localhost",
-        port: 11434,
-        path: "/api/chat",
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        }
-      };
-      return new Promise((resolve6, reject) => {
-        const req = import_http.default.request(options, (res) => {
-          let data = "";
-          res.on("data", (chunk) => {
-            data += chunk;
-          });
-          res.on("end", () => {
-            let end = Date.now();
-            console.log("Ollama request took", (end - start) / 1e3, "seconds");
-            try {
-              const parsedData = JSON.parse(data);
-              if (parsedData?.message) {
-                resolve6({
-                  role: parsedData.message.role,
-                  text: parsedData.message.content
-                });
-              } else {
-                resolve6(null);
-              }
-            } catch (error) {
-              reject(error);
-            }
-          });
-        });
-        req.on("error", (error) => {
-          reject(error);
-        });
-        req.write(
-          JSON.stringify({
-            model: modelInfo.model,
-            messages,
-            stream: false,
-            keep_alive: "15m"
-          })
-        );
-        req.end();
-      });
-    };
-    var ollama_default = ollamaRequest;
     var import_https = __toESM(require("https"));
     var anthropicRequest = async function(prompt, system, model, examples = []) {
       let apiKey = model.apiKey;
@@ -26488,7 +26426,8 @@ ${credentialScope}
     };
     var anthropic_default = anthropicRequest;
     var import_https2 = __toESM(require("https"));
-    var openaiRequest = async (userPrompt, systemMessage, modelInfo, examples = []) => {
+    var openaiRequest = async (userPrompt, systemMessage, modelInfo, examples = [], progress = (_text) => {
+    }) => {
       let messages = examples.map((m) => ({ role: m.role, content: m.text }));
       if (systemMessage) {
         messages.push({ role: "system", content: systemMessage });
@@ -26500,12 +26439,8 @@ ${credentialScope}
       }
       const postData = JSON.stringify({
         model: modelInfo.model,
-        messages: [
-          {
-            role: "user",
-            content: userPrompt
-          }
-        ]
+        messages,
+        stream: true
       });
       const options = {
         hostname: "api.openai.com",
@@ -26514,26 +26449,45 @@ ${credentialScope}
         method: "POST",
         headers: {
           Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-          "Content-Length": postData.length
+          "Content-Type": "application/json"
         }
       };
       return new Promise((resolve6, reject) => {
         const req = import_https2.default.request(options, (res) => {
-          let data = "";
+          let responseText = "";
           res.on("data", (chunk) => {
-            data += chunk;
+            const data = chunk.toString();
+            console.log("------------------ chunk ------------");
+            console.log(data);
+            console.log("----");
+            const lines = data.split("\n").filter((l) => l?.length > 0);
+            let lastLine = null;
+            if (lines?.length > 0) {
+              lastLine = lines[lines.length - 1];
+            }
+            if (lastLine) {
+              if (lastLine.trim()) {
+                let cleanLine = lastLine.replace(/^data:\s/, "");
+                try {
+                  if (cleanLine != "[DONE]") {
+                    console.log("openai cline", cleanLine);
+                    const result = JSON.parse(cleanLine);
+                    console.log("openai result", result);
+                    if (result?.choices?.length > 0) {
+                      let content = result.choices[0].delta.content ?? "";
+                      console.log("openai content", content);
+                      responseText += content;
+                      progress(responseText);
+                    }
+                  }
+                } catch (e) {
+                  console.log(cleanLine, e);
+                }
+              }
+            }
           });
           res.on("end", () => {
-            const jsonData = JSON.parse(data);
-            if (jsonData?.choices?.length ?? 0 > 0) {
-              resolve6({
-                role: jsonData.choices[0].message.role,
-                text: jsonData.choices[0].message.content
-              });
-            } else {
-              resolve6(null);
-            }
+            resolve6({ role: "assistant", text: responseText });
           });
         });
         req.on("error", (error) => {
@@ -26598,7 +26552,65 @@ ${credentialScope}
       });
     };
     var groq_default = groqRequest;
-    var makeRequest = async (userPrompt, systemMessage, modelKey, examples = []) => {
+    var import_http = __toESM(require("http"));
+    var streamOllamaRequest = async (userPrompt, systemMessage, modelInfo, history = [], progress) => {
+      let messages = history.map((m) => ({ role: m.role, content: m.text }));
+      if (systemMessage) {
+        messages.splice(0, 0, { role: "system", content: systemMessage });
+      }
+      messages.push({ role: "user", content: userPrompt });
+      const options = {
+        hostname: "localhost",
+        port: 11434,
+        path: "/api/chat",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return new Promise((resolve6, reject) => {
+        let responseText = "";
+        const req = import_http.default.request(options, (res) => {
+          res.on("data", (chunk) => {
+            const data = chunk.toString();
+            const lines = data.split("\n");
+            for (const line of lines) {
+              if (line.trim()) {
+                try {
+                  const result = JSON.parse(line);
+                  let content = result.message?.content ?? "";
+                  responseText += content;
+                  progress(responseText);
+                  if (result.done) {
+                    resolve6({ text: responseText, role: "assistant" });
+                  }
+                } catch (e) {
+                  console.log(e);
+                }
+              }
+            }
+          });
+          res.on("end", () => {
+            resolve6({ text: responseText, role: "assistant" });
+          });
+        });
+        req.on("error", (error) => {
+          reject(error);
+        });
+        req.write(
+          JSON.stringify({
+            model: modelInfo.model,
+            messages,
+            stream: true,
+            keep_alive: "2m"
+          })
+        );
+        req.end();
+      });
+    };
+    var streamOllama_default = streamOllamaRequest;
+    var makeRequest = async (userPrompt, systemMessage, modelKey, examples = [], progress = (_text) => {
+    }) => {
       let session2 = Session2.get();
       let modelInfo = session2.getModel(modelKey);
       if (!modelInfo) {
@@ -26610,13 +26622,13 @@ ${credentialScope}
         resp = await groq_default(userPrompt, systemMessage, modelInfo, examples);
       }
       if (modelInfo.service === "openai") {
-        resp = await openai_default(userPrompt, systemMessage, modelInfo, examples);
+        resp = await openai_default(userPrompt, systemMessage, modelInfo, examples, progress);
       }
       if (modelInfo.service === "anthropic") {
         resp = await anthropic_default(userPrompt, systemMessage, modelInfo, examples);
       }
       if (modelInfo.service === "ollama") {
-        resp = await ollama_default(userPrompt, systemMessage, modelInfo, examples);
+        resp = await streamOllama_default(userPrompt, systemMessage, modelInfo, examples, progress);
       }
       if (modelInfo.service === "google") {
         resp = await google_default(userPrompt, systemMessage, modelInfo, examples);
@@ -26650,7 +26662,15 @@ ${credentialScope}
       }
       let msg = null;
       if (!template.testresult) {
-        msg = await makeRequest_default(input, system, task2.model, task2.getChatMessages());
+        msg = await makeRequest_default(
+          input,
+          system,
+          task2.model,
+          task2.getChatMessages(),
+          (text) => {
+            console.log(text);
+          }
+        );
       } else {
         msg = {
           role: "assistant",
@@ -26793,8 +26813,7 @@ ${credentialScope}
         if (this.databasePath === ":memory:") {
           return true;
         }
-        let fileStat = (0, import_fs.statSync)(this.databasePath);
-        return fileStat.isFile();
+        return (0, import_fs.existsSync)(this.databasePath);
       }
       buildCommand(query, args) {
         const escapedArgs = args.map(
@@ -26846,40 +26865,59 @@ ${credentialScope}
         throw error;
       }
     }
+    var fs4 = __toESM(require("fs"));
     async function createEmbeds(dir) {
+      console.time("createEmbeds");
+      console.time("createEmbed:Setup");
       const session2 = Session2.get();
       const wdir = session2.workspace ?? path3.resolve(dir);
       const files = await listFiles(wdir);
-      console.log("\u{1F7E2} createEmbeds", wdir);
+      console.timeLog("createEmbed:Setup");
+      console.log("   creating embeds in", wdir);
+      console.time("createEmbed:GetEmbeds");
       let embeds = [];
       const embedsDB = await getEmbedsDB();
       try {
         if (embedsDB.doesDatabaseExist()) {
           const sql = "select * from collections where name = ?";
           const collection = await embedsDB.get(sql, ["code"]);
-          const sql2 = "select id, HEX(content_hash) as content_hash from embeddings where collection_id = ?";
+          const sql2 = "select id, HEX(content_hash) as content_hash, updated from embeddings where collection_id = ?";
           embeds = await embedsDB.all(sql2, [collection.id]);
         }
       } catch (e) {
         console.log("error", e);
       }
+      console.timeLog("createEmbed:GetEmbeds");
+      console.time("createEmbed:Files");
       for (const file of files) {
         const id = file.replace(`${wdir}/`, "");
+        let changed = false;
+        let fileStat = fs4.statSync(file);
         const embed = embeds.find((e) => e.id === id);
-        let hash = null;
-        let embedHash = "";
-        if (embed) {
-          hash = await fileHash(file);
-          embedHash = embed.content_hash;
+        if (!embed) {
+          changed = true;
+        } else if (embed.update < fileStat.mtime.getTime()) {
+          let hash = null;
+          let embedHash = "";
+          if (embed) {
+            hash = await fileHash(file);
+            embedHash = embed.content_hash;
+            changed = embedHash !== hash;
+          }
         }
-        if (embedHash !== hash) {
-          console.log(`\u{1F7E0} ${id}`);
+        if (changed) {
+          console.log(`   \u{1F7E0} ${id}`);
           let cmd = `llm embed -i "${file}" --store -d ${session2.embedsDatabaseFile} code "${id}"`;
-          await asyncExec(cmd);
+          let out = await asyncExec(cmd);
+          if (out.stderr) {
+            console.log("embed ERR", out.stderr);
+          }
         } else {
-          console.log(`\u{1F7E2} ${id}`);
+          console.log(`   \u{1F7E2} ${id}`);
         }
       }
+      console.timeLog("createEmbed:Files");
+      console.timeLog("createEmbeds");
       return true;
     }
     async function createEmbedForFile(filePath) {
@@ -26929,7 +26967,6 @@ ${credentialScope}
       if (!dir) {
         dir = Session2.get().localTemplatesDir;
       }
-      console.log("loadTemplates local", dir);
       let listing = import_fs2.default.readdirSync(dir);
       let files = listing.filter((file) => file.endsWith(".yaml")).map((f) => `${dir}/${f}`);
       let dirs = listing.filter((f) => import_fs2.default.statSync(`${dir}/${f}`).isDirectory()).map((d) => `${dir}/${d}`);
@@ -27145,7 +27182,7 @@ ${credentialScope}
       ]
     };
     var ReadFiles_default = ReadFiles;
-    var fs5 = __toESM(require("fs"));
+    var fs6 = __toESM(require("fs"));
     var path5 = __toESM(require("path"));
     var writeSingleFile = async (rawOutput, parsedOutput, param, options) => {
       console.log("writeSingleFile", param, parsedOutput);
@@ -27162,11 +27199,11 @@ ${credentialScope}
       }
       try {
         let dirName = path5.dirname(filePath);
-        if (!fs5.existsSync(dirName)) {
-          fs5.mkdirSync(dirName, { recursive: true });
+        if (!fs6.existsSync(dirName)) {
+          fs6.mkdirSync(dirName, { recursive: true });
         }
         console.log("writeSingleFile filePath", filePath);
-        fs5.writeFileSync(filePath, content);
+        fs6.writeFileSync(filePath, content);
         await createEmbedForFile(filePath);
       } catch (e) {
         console.log("writeSingleFile error", e);
@@ -27229,7 +27266,9 @@ find any keywords, variable, functions, libraries, directories and files in the 
           prompt,
           "You are a helpful assistant",
           "defaultSmallModel",
-          []
+          [],
+          (_text) => {
+          }
         );
       }
       let num = 10;
@@ -27578,7 +27617,6 @@ find any keywords, variable, functions, libraries, directories and files in the 
                     options.max_tokens = modelInfo.maxInputTokens ?? 4096;
                   }
                   let fn = hookfn.fn;
-                  console.log("fillInputVars", hookfn.name, param, options);
                   let data = await fn(param, options);
                   this.setData(v.name, data, v.dataType, v.modifier);
                 }
