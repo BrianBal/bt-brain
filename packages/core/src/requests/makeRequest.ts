@@ -1,6 +1,5 @@
 import Session from "../Session"
 import googleRequest from "./google"
-// import ollamaRequest from "./ollama"
 import anthropicRequest from "./anthropic"
 import openaiRequest from "./openai"
 import groqRequest from "./groq"
@@ -28,7 +27,7 @@ const makeRequest = async (
         resp = await openaiRequest(userPrompt, systemMessage, modelInfo, examples, progress)
     }
     if (modelInfo.service === "anthropic") {
-        resp = await anthropicRequest(userPrompt, systemMessage, modelInfo, examples)
+        resp = await anthropicRequest(userPrompt, systemMessage, modelInfo, examples, progress)
     }
     if (modelInfo.service === "ollama") {
         resp = await streamOllamaRequest(userPrompt, systemMessage, modelInfo, examples, progress)
