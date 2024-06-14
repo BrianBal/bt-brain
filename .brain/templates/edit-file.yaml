@@ -8,7 +8,7 @@ visible: true
 vars:
     - name: vscode_active_file
       type: string
-      form: file
+      form: File
     - name: task
       type: text
       form: Task

@@ -4,4 +4,4 @@ wait_message: Diffing
 response:
     save_data:
         key: diff
-command: "echo `git diff`"
+command: "git --no-pager diff --no-color"
