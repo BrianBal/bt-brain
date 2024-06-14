@@ -9,7 +9,7 @@
         "dev": "vite",
         "vbuild": "tsc && vite build",
         "build": "pnpm run esbuild && tsc",
-        "esbuild": "esbuild ./src/main.js  --bundle --outfile=./dist/main.js --format=cjs --platform=node",
+        "esbuild": "esbuild ./src/main.js  --sourcemap --bundle --outfile=./dist/main.js --format=cjs --platform=node",
         "preview": "vite preview",
         "test": "vitest run"
     },
