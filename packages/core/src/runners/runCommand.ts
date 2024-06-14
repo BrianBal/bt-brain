@@ -1,13 +1,15 @@
 import { AiTemplate } from "../AiTemplate"
 import AiTask from "../AiTask"
 import asyncExec, { ExecResult } from "../util/asyncExec"
+import sanitizeForCLI from "../util/sanitizeForCLI"
 
 export default async function runCommand(template: AiTemplate, task: AiTask): Promise<string> {
     let command = template.command!
     if (Array.isArray(template.vars)) {
         for (let v of template.vars) {
             let value = task.getData(v.name)
-            command = command.replaceAll(`__${v.name}__`, value)
+            let safeValue = sanitizeForCLI(value)
+            command = command.replaceAll(`__${v.name}__`, safeValue)
         }
     }
     console.log("runCommand", command)

@@ -3,6 +3,7 @@ import asyncExec, { ExecResult } from "../util/asyncExec"
 
 export default class Database {
     private databasePath: string
+    private locked: boolean = false
 
     constructor(databasePath: string) {
         this.databasePath = databasePath
@@ -24,8 +25,23 @@ export default class Database {
     }
 
     async run(query: string, args: any[] = []): Promise<ExecResult> {
-        const command = this.buildCommand(query, args)
-        let result = await asyncExec(command)
+        if (this.locked) {
+            const startTime = Date.now()
+            while (this.locked) {
+                if (Date.now() - startTime > 30000) {
+                    throw new Error("Database lock wait time exceeded 30 seconds")
+                }
+                await new Promise((resolve) => setTimeout(resolve, 100))
+            }
+        }
+        this.locked = true
+        let result: ExecResult = { code: 99, stdout: "", stderr: "unkown error" }
+        try {
+            const command = this.buildCommand(query, args)
+            result = await asyncExec(command)
+        } finally {
+            this.locked = false
+        }
         return result
     }
 

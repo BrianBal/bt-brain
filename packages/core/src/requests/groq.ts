@@ -67,7 +67,7 @@ const groqRequest: AIStreamingRequest = async (
                     })
                 } else {
                     console.log("request failed", jsonData)
-                    resolve(null)
+                    reject(jsonData)
                 }
             })
         })
