@@ -1,0 +1,7 @@
+id: git-diff
+type: command
+wait_message: Diffing
+response:
+    save_data:
+        key: diff
+command: "echo `git diff`"

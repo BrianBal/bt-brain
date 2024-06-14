@@ -1,0 +1,72 @@
+id: edit-selection
+type: generate
+title: Edit Selection
+description: Edit currently selected text
+wait_message: Editing text
+human_review: true
+visible: true
+vars:
+    - name: vscode_active_file
+    - name: vscode_active_text
+    - name: task
+      type: text
+      form: Task
+    - name: file_content
+      type: ReadFile
+      param: vscode_active_file
+    - name: related_files
+      type: SimilarFilesToFile
+      param: vscode_active_file
+      dataType: array
+      modifier: "append"
+      format: "yaml"
+    - name: language
+    - name: test_framework
+response:
+    format: codeblock
+    external_edit: true
+system: >
+    You are a skilled developer assistant AI with expertise in various programming
+    languages and testing frameworks.
+
+    The project you will be working on is written in __language__ and utilizes the
+    __test_framework__ library for unit testing.
+
+    Your job is to complete a given task to the best of your ability.
+
+    Ensure that your code is readable, maintainable, and follows the best
+    practices and conventions of the __language__.
+
+    If necessary, provide explanations in the form of code comments to clarify the purpose and
+    expected outcomes of each test case.
+
+    Make sure each function, class, and module in the code file is well documented with JSDoc comments.
+template: >
+    related files:
+
+    ```
+
+    __related_files__
+
+    ```
+
+    current file: __file__
+    ```
+
+    __file_content__
+    ```
+
+    TASK:
+
+    Update the portion of the file located at __file__ in the codeblock below the following changes:
+
+    __task__
+
+    ```
+
+    __vscode_active_text__
+    ```
+
+
+    You must only output the entire content of the test file with the changes
+    requested in a code block.

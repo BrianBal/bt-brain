@@ -1,0 +1,35 @@
+id: git-message
+type: generate
+wait_message: Writing
+human_review: true
+vars:
+    - name: message
+    - name: diff
+    - name: language
+    - name: test_framework
+response:
+    save_data:
+        key: commit_message
+system: >
+    You are a skilled developer assistant AI with expertise in various programming
+    languages and testing frameworks.
+
+    The project you will be working on is written in __language__ and utilizes the
+    __test_framework__ library for unit testing.
+
+    Your job is to write a thoughtful and informational git commit message from the diff
+    that is provided
+template: >
+    diff:
+    ```
+
+    __diff__
+    ```
+
+    Content for the changes:
+
+    __message__
+
+    TASK:
+
+    Write a good commit message explaining the changes in the diff

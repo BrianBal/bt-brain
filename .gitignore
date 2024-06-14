@@ -1,2 +1,4 @@
 node_modules
-.brain
+.brain/logs/*
+.brain/embeds.db
+*.DS_Store

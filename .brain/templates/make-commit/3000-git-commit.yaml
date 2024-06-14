@@ -1,0 +1,8 @@
+id: git-commit
+type: command
+wait_message: Commiting
+vars:
+    - name: commit_message
+    - name: language
+    - name: test_framework
+command: 'git add --all && git commit -a -m "__commit_message__"'

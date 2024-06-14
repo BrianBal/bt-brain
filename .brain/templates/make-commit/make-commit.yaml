@@ -1,0 +1,13 @@
+id: make-commit
+type: group
+title: Make Git Commit
+description: Make a git commit with a good message
+visible: true
+vars:
+    - name: message
+      type: string
+      form: What changed
+tasks:
+    - id: git-diff
+    - id: git-message
+    - id: git-commit
